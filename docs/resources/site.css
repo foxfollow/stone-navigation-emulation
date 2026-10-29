@@ -1,0 +1,151 @@
+/* Shared styles for the Stone Nav site (Tailwind CDN handles utilities). */
+body { font-family: "Plus Jakarta Sans", sans-serif; overflow-x: clip; }
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 80px; }
+
+.glass-nav {
+    background: rgba(17, 21, 28, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.glass-nav.scrolled { background: rgba(17, 21, 28, 0.95); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35); }
+
+.card-gradient {
+    background: linear-gradient(145deg, rgba(36, 41, 51, 0.6) 0%, rgba(20, 24, 31, 0.8) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.feat-card { transition: translate 0.3s ease, background 0.3s ease, border-color 0.3s ease; }
+.feat-card:hover { translate: 0 -4px; border-color: rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.04); }
+
+.code-box { background: #161b23; }
+.code-box code { white-space: pre; }
+/* Long commands scroll inside the box; the copy button stays put */
+.code-box > code { display: block; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.code-box > code::-webkit-scrollbar { display: none; }
+
+/* Ambient glow behind the hero: route blue on one side, dead-reckoning amber on the other */
+.hero-glow {
+    position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
+    width: min(820px, 84vw); height: 560px;
+    background:
+        radial-gradient(ellipse at 35% 45%, rgba(77, 140, 255, 0.2), transparent 60%),
+        radial-gradient(ellipse at 70% 60%, rgba(242, 166, 59, 0.12), transparent 60%);
+    filter: blur(48px); border-radius: 50%; pointer-events: none; z-index: -1;
+    animation: glowBreathe 12s ease-in-out infinite;
+}
+@keyframes glowBreathe {
+    0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.08); }
+}
+
+/* Entrance + scroll reveal (gated on .js so content stays visible without JS) */
+.anim-fade { animation: fadeUp 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.anim-d1 { animation-delay: 0.1s; } .anim-d2 { animation-delay: 0.2s; }
+.anim-d3 { animation-delay: 0.3s; } .anim-d4 { animation-delay: 0.4s; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.js .reveal { opacity: 0; translate: 0 24px; transition: opacity 0.6s ease, translate 0.6s ease; }
+.js .reveal.visible { opacity: 1; translate: 0 0; }
+
+#language-picker:focus-within .lang-dropdown { opacity: 1; visibility: visible; }
+
+/* Accent words in the hero title carry the route gradient: GPS blue into dead-reckoning amber */
+.hero-title .accent { background-image: linear-gradient(100deg, #7aa8ff, #f2a63b); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+html:not(.dark) .hero-title .accent { background-image: linear-gradient(100deg, #2563eb, #d97706); }
+
+/* Mode accents taken from the app */
+.text-gps { color: #4d8cff; }
+.text-dr { color: #f2a63b; }
+
+/* How it works: four states along one line */
+.flow { position: relative; }
+.flow-line {
+    position: absolute; left: 12.5%; right: 12.5%; top: 28px; height: 2px; border-radius: 2px;
+    background: linear-gradient(90deg, #4d8cff 0%, #ff6b5e 33%, #f2a63b 50%, #f2a63b 70%, #4d8cff 100%);
+    opacity: 0.55;
+}
+.flow-dot {
+    width: 56px; height: 56px; border-radius: 9999px; margin: 0 auto 1.25rem;
+    display: grid; place-items: center; font-size: 20px; position: relative; z-index: 1;
+    background: #11151c; border: 2px solid currentColor;
+}
+@media (max-width: 767px) { .flow-line { display: none; } }
+
+/* Screenshot strip */
+.shots { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 260px); gap: 24px;
+    overflow-x: auto; scroll-snap-type: x mandatory; padding: 12px 4px 28px; scrollbar-width: none; }
+.shots::-webkit-scrollbar { display: none; }
+.shot { scroll-snap-align: center; text-align: center; }
+.screenshot-card {
+    border-radius: 30px; padding: 6px; cursor: zoom-in;
+    background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px -18px rgba(0, 0, 0, 0.7);
+}
+.screenshot-card img { display: block; width: 100%; border-radius: 24px; }
+.shot figcaption { margin-top: 14px; font-size: 13px; color: #9ca3af; line-height: 1.45; }
+.shot figcaption b { display: block; color: #e5e7eb; font-weight: 600; margin-bottom: 2px; }
+
+/* Screenshot modal */
+.modal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0, 0, 0, 0.92);
+    align-items: center; justify-content: center; flex-direction: column; gap: 14px; padding: 24px; cursor: zoom-out; }
+.modal-content { max-height: 84vh; max-width: 92vw; border-radius: 28px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); }
+.modal-caption { color: #d1d5db; font-size: 14px; text-align: center; }
+.modal-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 28px; line-height: 1; background: none; border: 0; cursor: pointer; }
+
+/* Installation steps */
+.step-num {
+    width: 2rem; height: 2rem; flex-shrink: 0; border-radius: 9999px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(77, 140, 255, 0.15); color: #7aa8ff; font-weight: 700; font-size: 0.875rem;
+}
+.path { font-family: "JetBrains Mono", monospace; font-size: 0.85em; padding: 1px 6px; border-radius: 6px; background: rgba(255, 255, 255, 0.07); overflow-wrap: anywhere; }
+
+/* Light theme overrides */
+html:not(.dark) body { background-color: #ffffff; color: #1a1a1a; }
+html:not(.dark) .glass-nav { background: rgba(255, 255, 255, 0.85); border-bottom-color: rgba(0, 0, 0, 0.1); }
+html:not(.dark) .glass-nav.scrolled { background: rgba(255, 255, 255, 0.95); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08); }
+html:not(.dark) .nav-brand { color: #1a1a1a; }
+html:not(.dark) .nav-link { color: #555; }
+html:not(.dark) .nav-link:hover { color: #000 !important; }
+html:not(.dark) .nav-btn { border-color: rgba(0,0,0,0.15); background: rgba(0,0,0,0.05); color: #555; }
+html:not(.dark) .nav-btn:hover { background: rgba(0,0,0,0.1); }
+html:not(.dark) .hero-title { background: linear-gradient(to bottom, #1a1a1a, #555) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; }
+html:not(.dark) .hero-sub, html:not(.dark) .section-sub { color: #666 !important; }
+html:not(.dark) .hero-badge { background: rgba(77,140,255,0.08); color: #1d4ed8; }
+html:not(.dark) .note { background: rgba(242,166,59,0.1); color: #92400e; }
+html:not(.dark) .btn-secondary { border-color: rgba(0,0,0,0.15) !important; background: rgba(0,0,0,0.05) !important; color: #1a1a1a !important; }
+html:not(.dark) .btn-secondary:hover { background: rgba(0,0,0,0.1) !important; }
+html:not(.dark) .section-title { color: #1a1a1a; }
+html:not(.dark) .card-gradient { background: linear-gradient(145deg, #f8f8f8 0%, #f0f0f0 100%); border-color: rgba(0, 0, 0, 0.08); }
+html:not(.dark) .card-gradient h2, html:not(.dark) .card-gradient h3, html:not(.dark) .card-gradient h4 { color: #1a1a1a; }
+html:not(.dark) .card-gradient p, html:not(.dark) .card-gradient li, html:not(.dark) .card-gradient .text-gray-400 { color: #555 !important; }
+html:not(.dark) .card-gradient code:not(.code-box code), html:not(.dark) .path { color: #1a1a1a !important; background: rgba(0,0,0,0.06) !important; }
+html:not(.dark) .code-box code { color: #a5c4ff !important; }
+html:not(.dark) .feat-card:hover { background: rgba(0,0,0,0.03) !important; }
+html:not(.dark) .flow-dot { background: #fff; }
+html:not(.dark) .flow h3 { color: #1a1a1a; }
+html:not(.dark) .flow p { color: #555 !important; }
+html:not(.dark) .screenshot-card { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); box-shadow: 0 20px 44px -20px rgba(0,0,0,0.3); }
+html:not(.dark) .shot figcaption { color: #666; }
+html:not(.dark) .shot figcaption b { color: #1a1a1a; }
+html:not(.dark) .footer-section { border-top-color: rgba(0,0,0,0.1); }
+html:not(.dark) .footer-section h5 { color: #1a1a1a; }
+html:not(.dark) .footer-section p, html:not(.dark) .footer-section a { color: #666 !important; }
+html:not(.dark) .footer-section a:hover { color: #1a1a1a !important; }
+html:not(.dark) .footer-bottom { border-top-color: rgba(0,0,0,0.05); color: #999; }
+html:not(.dark) .lang-dropdown { background: #fff; border-color: rgba(0,0,0,0.1); }
+html:not(.dark) .lang-dropdown a { color: #333; }
+html:not(.dark) .lang-dropdown a:hover { background: rgba(0,0,0,0.05); }
+html:not(.dark) .hero-glow {
+    background:
+        radial-gradient(ellipse at 35% 45%, rgba(77, 140, 255, 0.14), transparent 60%),
+        radial-gradient(ellipse at 70% 60%, rgba(242, 166, 59, 0.1), transparent 60%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1; translate: none; transition: none; }
+    .anim-fade, .hero-glow { animation: none; }
+    .feat-card, .feat-card:hover { transition: none; translate: none; }
+}

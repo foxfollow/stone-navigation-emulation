@@ -1,0 +1,7 @@
+# Stone Nav - robots.txt
+# https://foxfollow.github.io/stone-navigation-emulation/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://foxfollow.github.io/stone-navigation-emulation/sitemap.xml
