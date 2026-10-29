@@ -1,0 +1,7 @@
+// Підпис і bundle ID. Свої значення пишіть у Local.xcconfig поруч (його немає в git):
+//   cp Config/Local.xcconfig.example Config/Local.xcconfig
+// Без Local.xcconfig команду можна вибрати в Xcode: Signing & Capabilities → Team.
+DEVELOPMENT_TEAM =
+BUNDLE_ID_PREFIX = com.example
+
+#include? "Local.xcconfig"

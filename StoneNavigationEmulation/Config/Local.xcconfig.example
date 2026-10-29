@@ -1,0 +1,5 @@
+// Скопіюйте в Local.xcconfig і впишіть своє.
+// Team ID: Xcode → Settings → Accounts → ваш Apple ID → Team, або developer.apple.com → Membership.
+DEVELOPMENT_TEAM = ABCDE12345
+// Будь-який унікальний префікс, наприклад com.вашеімʼя латиницею.
+BUNDLE_ID_PREFIX = com.yourname

@@ -1,0 +1,10 @@
+Filtering the log data using "subsystem == "com.example.StoneNavigationEmulation" AND category == "Mode""
+Timestamp               Ty Process[PID:TID]
+2026-10-25 02:29:47.702 Df StoneNavigationEmulation[47817:1475b1d] [com.example.StoneNavigationEmulation:Mode] Навігація: маршрут «Броварський проспект», 11370 м, кроків 12, середня швидкість 45 км/год
+2026-10-25 02:30:17.412 Df StoneNavigationEmulation[47817:1475b1d] [com.example.StoneNavigationEmulation:Mode] Режим: GPS → Розрахункова позиція [gps->deadReckoning], причина: помилка геолокації [locationError], позиція 387 м з 11370 м
+2026-10-25 02:30:23.440 Df StoneNavigationEmulation[47817:1475b1d] [com.example.StoneNavigationEmulation:Mode] Розрахункова позиція (рух): 462 м з 11370 м, 45 км/год [route], без GPS 6 с
+2026-10-25 02:30:28.690 Df StoneNavigationEmulation[47817:1475b1d] [com.example.StoneNavigationEmulation:Mode] Розрахункова позиція (рух): 527 м з 11370 м, 45 км/год [route], без GPS 11 с
+2026-10-25 02:30:33.959 Df StoneNavigationEmulation[47817:1475b1d] [com.example.StoneNavigationEmulation:Mode] Розрахункова позиція (рух): 593 м з 11370 м, 45 км/год [route], без GPS 16 с
+2026-10-25 02:30:39.290 Df StoneNavigationEmulation[47817:1475b1d] [com.example.StoneNavigationEmulation:Mode] Розрахункова позиція (рух): 659 м з 11370 м, 45 км/год [route], без GPS 22 с
+2026-10-25 02:30:44.591 Df StoneNavigationEmulation[47817:1475b1d] [com.example.StoneNavigationEmulation:Mode] Розрахункова позиція (рух): 725 м з 11370 м, 45 км/год [route], без GPS 27 с
+Child process terminated with signal 15: Terminated

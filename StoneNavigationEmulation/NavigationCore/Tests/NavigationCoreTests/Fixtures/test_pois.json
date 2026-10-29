@@ -1,0 +1,1242 @@
+[
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4490351,
+      "longitude" : 30.5319688
+    },
+    "id" : "IC09EFE98309DE14C",
+    "mapItemIdentifier" : "IC09EFE98309DE14C",
+    "name" : "Sanahunt Luxury Concept Store"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4489343,
+      "longitude" : 30.5319468
+    },
+    "id" : "IF966D4E4480054D1",
+    "mapItemIdentifier" : "IF966D4E4480054D1",
+    "name" : "Sanahunt Luxury Department Store"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4466504,
+      "longitude" : 30.5316285
+    },
+    "id" : "I51A0462297B24329",
+    "mapItemIdentifier" : "I51A0462297B24329",
+    "name" : "Old Collection"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.450229,
+      "longitude" : 30.5289459
+    },
+    "id" : "I96DC21A8AAD11017",
+    "mapItemIdentifier" : "I96DC21A8AAD11017",
+    "name" : "Blonde and Bride"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.450909,
+      "longitude" : 30.5287153
+    },
+    "id" : "IE0020EA4A17C483E",
+    "mapItemIdentifier" : "IE0020EA4A17C483E",
+    "name" : "Oberig Jewelry"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4450572,
+      "longitude" : 30.5345571
+    },
+    "id" : "IBC8B20F02B9AF60E",
+    "mapItemIdentifier" : "IBC8B20F02B9AF60E",
+    "name" : "Студия Обуви Ango"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4451818,
+      "longitude" : 30.5354562
+    },
+    "id" : "IFCEA1FB2AC5937E8",
+    "mapItemIdentifier" : "IFCEA1FB2AC5937E8",
+    "name" : "Instytutska Gallery"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4511239,
+      "longitude" : 30.5283988
+    },
+    "id" : "I3AFCEA96A93DD2BA",
+    "mapItemIdentifier" : "I3AFCEA96A93DD2BA",
+    "name" : "Книгарня \"Наукова думка\""
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4469599,
+      "longitude" : 30.5288064
+    },
+    "id" : "ID4FEB55C9153C06C",
+    "mapItemIdentifier" : "ID4FEB55C9153C06C",
+    "name" : "blastout.ua"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.44658,
+      "longitude" : 30.52801
+    },
+    "id" : "I51A0E1E3A76E4BEB",
+    "mapItemIdentifier" : "I51A0E1E3A76E4BEB",
+    "name" : "Van Cleef & Arpels"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4465014,
+      "longitude" : 30.5278931
+    },
+    "id" : "I69FEB17FE25C2C2D",
+    "mapItemIdentifier" : "I69FEB17FE25C2C2D",
+    "name" : "Галерея Боско"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4468352,
+      "longitude" : 30.5273648
+    },
+    "id" : "IA7CA132428005C45",
+    "mapItemIdentifier" : "IA7CA132428005C45",
+    "name" : "Cartier"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4475754,
+      "longitude" : 30.5267772
+    },
+    "id" : "I68351FF17D9F6AA7",
+    "mapItemIdentifier" : "I68351FF17D9F6AA7",
+    "name" : "Chopard"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4465118,
+      "longitude" : 30.5270641
+    },
+    "id" : "I64BE945A3509F05F",
+    "mapItemIdentifier" : "I64BE945A3509F05F",
+    "name" : "belok - Спортивное питание"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4477559,
+      "longitude" : 30.5264032
+    },
+    "id" : "I592AA2D6A971B5A0",
+    "mapItemIdentifier" : "I592AA2D6A971B5A0",
+    "name" : "Жан niche concept"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4494269,
+      "longitude" : 30.5259797
+    },
+    "id" : "IC1BDEA9C520C1BB3",
+    "mapItemIdentifier" : "IC1BDEA9C520C1BB3",
+    "name" : "NOVUS"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.449327,
+      "longitude" : 30.5259697
+    },
+    "id" : "I9B9B11399D00FE64",
+    "mapItemIdentifier" : "I9B9B11399D00FE64",
+    "name" : "Глобус 2"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.44937,
+      "longitude" : 30.52596
+    },
+    "id" : "I8D74F0925D8B7865",
+    "mapItemIdentifier" : "I8D74F0925D8B7865",
+    "name" : "Reserved"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4513879,
+      "longitude" : 30.5254057
+    },
+    "id" : "I2E97BCB1A0C27813",
+    "mapItemIdentifier" : "I2E97BCB1A0C27813",
+    "name" : "Art Vivace Jewelry"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4477456,
+      "longitude" : 30.5250889
+    },
+    "id" : "I9D72C7A290015DF5",
+    "mapItemIdentifier" : "I9D72C7A290015DF5",
+    "name" : "DOMINO PASSAGE"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4464434,
+      "longitude" : 30.5254884
+    },
+    "id" : "I20CDC3F9C9CE7380",
+    "mapItemIdentifier" : "I20CDC3F9C9CE7380",
+    "name" : "DIOR"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4462118,
+      "longitude" : 30.5252928
+    },
+    "id" : "IE7A1E39F494F33B9",
+    "mapItemIdentifier" : "IE7A1E39F494F33B9",
+    "name" : "Антологія"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4477402,
+      "longitude" : 30.5247665
+    },
+    "id" : "I7F022D0D9CA0EE58",
+    "mapItemIdentifier" : "I7F022D0D9CA0EE58",
+    "name" : "Moncler"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4479044,
+      "longitude" : 30.5245137
+    },
+    "id" : "IBC114C5C096EE721",
+    "mapItemIdentifier" : "IBC114C5C096EE721",
+    "name" : "Prada"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4476124,
+      "longitude" : 30.5244398
+    },
+    "id" : "I95086D0CB7E7F9C5",
+    "mapItemIdentifier" : "I95086D0CB7E7F9C5",
+    "name" : "Brunello Cucinelli"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4519641,
+      "longitude" : 30.5242038
+    },
+    "id" : "I6B4AEED58295B2E7",
+    "mapItemIdentifier" : "I6B4AEED58295B2E7",
+    "name" : "Винтаж Экипаж"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4510194,
+      "longitude" : 30.5240185
+    },
+    "id" : "I7DCA13D403672BDA",
+    "mapItemIdentifier" : "I7DCA13D403672BDA",
+    "name" : "Linashop"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4477896,
+      "longitude" : 30.5239201
+    },
+    "id" : "IE5336DDEED0E43D1",
+    "mapItemIdentifier" : "IE5336DDEED0E43D1",
+    "name" : "Salvatore Ferragamo"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4485347,
+      "longitude" : 30.523662
+    },
+    "id" : "I8DB4C9F5E5FA3C53",
+    "mapItemIdentifier" : "I8DB4C9F5E5FA3C53",
+    "name" : "VARUS"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.447887,
+      "longitude" : 30.52375
+    },
+    "id" : "I393F66B52D9B2CA",
+    "mapItemIdentifier" : "I393F66B52D9B2CA",
+    "name" : "Киевский пассаж"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.448663,
+      "longitude" : 30.5235412
+    },
+    "id" : "IE713BF548FF7263F",
+    "mapItemIdentifier" : "IE713BF548FF7263F",
+    "name" : "folkmart"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.448663,
+      "longitude" : 30.5235412
+    },
+    "id" : "I1F6475F66D8DE1FC",
+    "mapItemIdentifier" : "I1F6475F66D8DE1FC",
+    "name" : "Aviatsiya Halychyny"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4478152,
+      "longitude" : 30.523614
+    },
+    "id" : "I1281B22692DC0AAF",
+    "mapItemIdentifier" : "I1281B22692DC0AAF",
+    "name" : "Louis Vuitton"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4478152,
+      "longitude" : 30.523614
+    },
+    "id" : "I1B7F7D1239722194",
+    "mapItemIdentifier" : "I1B7F7D1239722194",
+    "name" : "Gucci"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4501,
+      "longitude" : 30.5234
+    },
+    "id" : "IBD78034E881F1F8A",
+    "mapItemIdentifier" : "IBD78034E881F1F8A",
+    "name" : "BOSS Store"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4501,
+      "longitude" : 30.5234
+    },
+    "id" : "I3E23EB555C1CF776",
+    "mapItemIdentifier" : "I3E23EB555C1CF776",
+    "name" : "Bo&So"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.448644,
+      "longitude" : 30.5234098
+    },
+    "id" : "IA39054FD5D4327E6",
+    "mapItemIdentifier" : "IA39054FD5D4327E6",
+    "name" : "BigMag"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4498737,
+      "longitude" : 30.5232382
+    },
+    "id" : "I268BED34D713203C",
+    "mapItemIdentifier" : "I268BED34D713203C",
+    "name" : "Книгарня Yakaboo"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.450635,
+      "longitude" : 30.523261
+    },
+    "id" : "I84DEC8AA0B34B9EE",
+    "mapItemIdentifier" : "I84DEC8AA0B34B9EE",
+    "name" : "UA made"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4498925,
+      "longitude" : 30.523156
+    },
+    "id" : "I2CB5FEEFF700413F",
+    "mapItemIdentifier" : "I2CB5FEEFF700413F",
+    "name" : "eva"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4495526,
+      "longitude" : 30.5230236
+    },
+    "id" : "I4653E36650362310",
+    "mapItemIdentifier" : "I4653E36650362310",
+    "name" : "EVA"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4500752,
+      "longitude" : 30.5228144
+    },
+    "id" : "I589D9F0201703D44",
+    "mapItemIdentifier" : "I589D9F0201703D44",
+    "name" : "ROZETKA"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4477595,
+      "longitude" : 30.5229564
+    },
+    "id" : "IA6FE34D9557AD9F5",
+    "mapItemIdentifier" : "IA6FE34D9557AD9F5",
+    "name" : "Terranova Киев"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4506016,
+      "longitude" : 30.522795
+    },
+    "id" : "I45138CADCC655A64",
+    "mapItemIdentifier" : "I45138CADCC655A64",
+    "name" : "Глобус"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.451509,
+      "longitude" : 30.52289
+    },
+    "id" : "I4FF4ACC2A9873DCA",
+    "mapItemIdentifier" : "I4FF4ACC2A9873DCA",
+    "name" : "Calzedonia"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4509463,
+      "longitude" : 30.522632
+    },
+    "id" : "I4739100A6333D685",
+    "mapItemIdentifier" : "I4739100A6333D685",
+    "name" : "Colin's"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.451053,
+      "longitude" : 30.522619
+    },
+    "id" : "I62A3FE89D91412A0",
+    "mapItemIdentifier" : "I62A3FE89D91412A0",
+    "name" : "Levi's Store"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4510248,
+      "longitude" : 30.5225408
+    },
+    "id" : "I79F9867B17FCF237",
+    "mapItemIdentifier" : "I79F9867B17FCF237",
+    "name" : "NOVUS"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4404427,
+      "longitude" : 30.5504004
+    },
+    "id" : "IA29466ADBC9431C1",
+    "mapItemIdentifier" : "IA29466ADBC9431C1",
+    "name" : "Навігатор"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4404245,
+      "longitude" : 30.5503687
+    },
+    "id" : "I3F4ED02E021DF76F",
+    "mapItemIdentifier" : "I3F4ED02E021DF76F",
+    "name" : "NOVUS"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4405613,
+      "longitude" : 30.549438
+    },
+    "id" : "I68FF37D6661FC5CB",
+    "mapItemIdentifier" : "I68FF37D6661FC5CB",
+    "name" : "Voentorg DiSi"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4416409,
+      "longitude" : 30.5579889
+    },
+    "id" : "I19CEDD02EDDF4DDE",
+    "mapItemIdentifier" : "I19CEDD02EDDF4DDE",
+    "name" : "Рыбацкий Рынок (Бухара)"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4398616,
+      "longitude" : 30.5463514
+    },
+    "id" : "IF130A4547F48C936",
+    "mapItemIdentifier" : "IF130A4547F48C936",
+    "name" : "LaEsthetics"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.442003,
+      "longitude" : 30.5455112
+    },
+    "id" : "IF2B1BD0F61A695B2",
+    "mapItemIdentifier" : "IF2B1BD0F61A695B2",
+    "name" : "Горох"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4380638,
+      "longitude" : 30.545184
+    },
+    "id" : "I1BA7C4DDAADB8833",
+    "mapItemIdentifier" : "I1BA7C4DDAADB8833",
+    "name" : "GUDU"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.444665,
+      "longitude" : 30.544741
+    },
+    "id" : "IF37EEE84FF5A5317",
+    "mapItemIdentifier" : "IF37EEE84FF5A5317",
+    "name" : "Львівська Майстерня Шоколаду"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4443917,
+      "longitude" : 30.5422594
+    },
+    "id" : "IF9A6E0D00181DC04",
+    "mapItemIdentifier" : "IF9A6E0D00181DC04",
+    "name" : "ВК ЕКСПРЕС"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4360305,
+      "longitude" : 30.5419583
+    },
+    "id" : "I7BA45A4BCBC2DC2D",
+    "mapItemIdentifier" : "I7BA45A4BCBC2DC2D",
+    "name" : "Зоомагазин"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4331301,
+      "longitude" : 30.5662705
+    },
+    "id" : "IF8EF6643B1CA8D5A",
+    "mapItemIdentifier" : "IF8EF6643B1CA8D5A",
+    "name" : "BOSS Store"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4487694,
+      "longitude" : 30.5915835
+    },
+    "id" : "IC62D8CE9CA185BD7",
+    "mapItemIdentifier" : "IC62D8CE9CA185BD7",
+    "name" : "Paradise Fruit"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.448424,
+      "longitude" : 30.5926259
+    },
+    "id" : "IF6372D5FC724B316",
+    "mapItemIdentifier" : "IF6372D5FC724B316",
+    "name" : "АТБ"
+  },
+  {
+    "category" : "gasStation",
+    "coordinate" : {
+      "latitude" : 50.4498498,
+      "longitude" : 30.588609
+    },
+    "id" : "IE437D2186BB8F974",
+    "mapItemIdentifier" : "IE437D2186BB8F974",
+    "name" : "АЗС «WOG»"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4503451,
+      "longitude" : 30.5939519
+    },
+    "id" : "IC9C843B0505D6412",
+    "mapItemIdentifier" : "IC9C843B0505D6412",
+    "name" : "Фотоцентр Photovision"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4503656,
+      "longitude" : 30.5940646
+    },
+    "id" : "I6372C03DF5B625A8",
+    "mapItemIdentifier" : "I6372C03DF5B625A8",
+    "name" : "Христина Мандарина"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4530257,
+      "longitude" : 30.5937457
+    },
+    "id" : "IC47D0BC2C8606B98",
+    "mapItemIdentifier" : "IC47D0BC2C8606B98",
+    "name" : "Сирне королівство"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.453102,
+      "longitude" : 30.593897
+    },
+    "id" : "IFA0B1573DB7392C",
+    "mapItemIdentifier" : "IFA0B1573DB7392C",
+    "name" : "NOVUS"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.454392,
+      "longitude" : 30.5897317
+    },
+    "id" : "I7BE1AB7BF2403C8A",
+    "mapItemIdentifier" : "I7BE1AB7BF2403C8A",
+    "name" : "Samsonite"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4543106,
+      "longitude" : 30.5894351
+    },
+    "id" : "IA749B42BE7533DAE",
+    "mapItemIdentifier" : "IA749B42BE7533DAE",
+    "name" : "АТБ"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4535755,
+      "longitude" : 30.5878691
+    },
+    "id" : "I497F9528EAA6F295",
+    "mapItemIdentifier" : "I497F9528EAA6F295",
+    "name" : "blom.boutique"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.449375,
+      "longitude" : 30.5965483
+    },
+    "id" : "I1AFE3D14184784D0",
+    "mapItemIdentifier" : "I1AFE3D14184784D0",
+    "name" : "Бджілка"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4494946,
+      "longitude" : 30.5967361
+    },
+    "id" : "I56A5AA788DFE899E",
+    "mapItemIdentifier" : "I56A5AA788DFE899E",
+    "name" : "belok - Спортивное питание"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4491906,
+      "longitude" : 30.5969453
+    },
+    "id" : "I255F7E79D3E2FCED",
+    "mapItemIdentifier" : "I255F7E79D3E2FCED",
+    "name" : "Зоомагазин Dingo"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4441656,
+      "longitude" : 30.5918437
+    },
+    "id" : "IFE04A9E1DABF99D7",
+    "mapItemIdentifier" : "IFE04A9E1DABF99D7",
+    "name" : "Море Пива"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4504942,
+      "longitude" : 30.5974747
+    },
+    "id" : "IBD88C7CC1C9D0E85",
+    "mapItemIdentifier" : "IBD88C7CC1C9D0E85",
+    "name" : "Салон-магазин Appbar"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4509452,
+      "longitude" : 30.597746
+    },
+    "id" : "I431CE76C5430EF83",
+    "mapItemIdentifier" : "I431CE76C5430EF83",
+    "name" : "Liubov_lux_permanent"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4508752,
+      "longitude" : 30.597765
+    },
+    "id" : "I7EC9A83DD3B3C51B",
+    "mapItemIdentifier" : "I7EC9A83DD3B3C51B",
+    "name" : "anyBag"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4514166,
+      "longitude" : 30.5979001
+    },
+    "id" : "I2BF61DB3C1C4DEDB",
+    "mapItemIdentifier" : "I2BF61DB3C1C4DEDB",
+    "name" : "Лівобережний"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4515577,
+      "longitude" : 30.5988175
+    },
+    "id" : "IB2A5ADE1E24F0C2B",
+    "mapItemIdentifier" : "IB2A5ADE1E24F0C2B",
+    "name" : "Watsons"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4533234,
+      "longitude" : 30.5984561
+    },
+    "id" : "I7EAEB372590E5F54",
+    "mapItemIdentifier" : "I7EAEB372590E5F54",
+    "name" : "Сільпо"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4504886,
+      "longitude" : 30.5992305
+    },
+    "id" : "I20E31250588561C0",
+    "mapItemIdentifier" : "I20E31250588561C0",
+    "name" : "Roshen"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4536435,
+      "longitude" : 30.5985873
+    },
+    "id" : "I2358757A9A21E19D",
+    "mapItemIdentifier" : "I2358757A9A21E19D",
+    "name" : "ТРЦ «Комод»"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.45359,
+      "longitude" : 30.598737
+    },
+    "id" : "IB7CAD23CCF4CFA49",
+    "mapItemIdentifier" : "IB7CAD23CCF4CFA49",
+    "name" : "Brocard"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4472981,
+      "longitude" : 30.6025887
+    },
+    "id" : "I1812F0D1DA98BD37",
+    "mapItemIdentifier" : "I1812F0D1DA98BD37",
+    "name" : "NOVUS"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4467659,
+      "longitude" : 30.6035607
+    },
+    "id" : "ID21356D38968A8EB",
+    "mapItemIdentifier" : "ID21356D38968A8EB",
+    "name" : "FLOWERS AND TEA SHOP"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4582278,
+      "longitude" : 30.6153794
+    },
+    "id" : "IABF2C7BCDC0C9930",
+    "mapItemIdentifier" : "IABF2C7BCDC0C9930",
+    "name" : "Beer Market"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.458174,
+      "longitude" : 30.6151843
+    },
+    "id" : "I4D98D6843067A9E1",
+    "mapItemIdentifier" : "I4D98D6843067A9E1",
+    "name" : "Море Пива"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4580812,
+      "longitude" : 30.6148034
+    },
+    "id" : "I1098DD63B6C15ECC",
+    "mapItemIdentifier" : "I1098DD63B6C15ECC",
+    "name" : "Квіти"
+  },
+  {
+    "category" : "gasStation",
+    "coordinate" : {
+      "latitude" : 50.4579586,
+      "longitude" : 30.6177754
+    },
+    "id" : "IBA36294A17C4D011",
+    "mapItemIdentifier" : "IBA36294A17C4D011",
+    "name" : "АЗК КЛО"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4584022,
+      "longitude" : 30.6141168
+    },
+    "id" : "I6E86EC5F9DCD6B62",
+    "mapItemIdentifier" : "I6E86EC5F9DCD6B62",
+    "name" : "VARUS"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.45967,
+      "longitude" : 30.61554
+    },
+    "id" : "I38CB942928A45076",
+    "mapItemIdentifier" : "I38CB942928A45076",
+    "name" : "Д. Магазин"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4585424,
+      "longitude" : 30.6140376
+    },
+    "id" : "I6B063608C668CC",
+    "mapItemIdentifier" : "I6B063608C668CC",
+    "name" : "Дитячий Світ"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4584944,
+      "longitude" : 30.6139612
+    },
+    "id" : "IE53A4496A2EEB399",
+    "mapItemIdentifier" : "IE53A4496A2EEB399",
+    "name" : "PLANETTOYS"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4567424,
+      "longitude" : 30.61387
+    },
+    "id" : "I456C76BA0F8DB039",
+    "mapItemIdentifier" : "I456C76BA0F8DB039",
+    "name" : "EVA.UA - EVA 315"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4568893,
+      "longitude" : 30.6137547
+    },
+    "id" : "I5F91C03D3ED207C",
+    "mapItemIdentifier" : "I5F91C03D3ED207C",
+    "name" : "Продукти Єрмоліно"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4575587,
+      "longitude" : 30.6135964
+    },
+    "id" : "I9B71FF8FC6D4FBF6",
+    "mapItemIdentifier" : "I9B71FF8FC6D4FBF6",
+    "name" : "Конфіскат"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4582246,
+      "longitude" : 30.6185237
+    },
+    "id" : "I6EAEB4636E5C0D61",
+    "mapItemIdentifier" : "I6EAEB4636E5C0D61",
+    "name" : "Магазин \"Підшипники\""
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4570573,
+      "longitude" : 30.6132725
+    },
+    "id" : "IDD3584F1222FB6DF",
+    "mapItemIdentifier" : "IDD3584F1222FB6DF",
+    "name" : "Книгарня «Є»"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.458089,
+      "longitude" : 30.6131623
+    },
+    "id" : "IFDB79BCE56F67FBB",
+    "mapItemIdentifier" : "IFDB79BCE56F67FBB",
+    "name" : "Будинок Іграшок"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4573811,
+      "longitude" : 30.6126148
+    },
+    "id" : "I111A49D3D8449D0F",
+    "mapItemIdentifier" : "I111A49D3D8449D0F",
+    "name" : "Roshen"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.454782,
+      "longitude" : 30.6184351
+    },
+    "id" : "I5835EC1DE937207C",
+    "mapItemIdentifier" : "I5835EC1DE937207C",
+    "name" : "Галя Балувана"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4577499,
+      "longitude" : 30.6120193
+    },
+    "id" : "I8D9BAD6CF70A46C3",
+    "mapItemIdentifier" : "I8D9BAD6CF70A46C3",
+    "name" : "Кубик"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4555368,
+      "longitude" : 30.6124806
+    },
+    "id" : "IC0101FA2D1BE93B3",
+    "mapItemIdentifier" : "IC0101FA2D1BE93B3",
+    "name" : "ПуховичОК"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4607302,
+      "longitude" : 30.612943
+    },
+    "id" : "I6D2A643828609D9",
+    "mapItemIdentifier" : "I6D2A643828609D9",
+    "name" : "BOX Експрес Маркет"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4576714,
+      "longitude" : 30.6116277
+    },
+    "id" : "ID90D2491EFD90D05",
+    "mapItemIdentifier" : "ID90D2491EFD90D05",
+    "name" : "Comfy"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4549049,
+      "longitude" : 30.6119066
+    },
+    "id" : "IC2D571CD1A1C3C6D",
+    "mapItemIdentifier" : "IC2D571CD1A1C3C6D",
+    "name" : "Улюблений"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4545837,
+      "longitude" : 30.6110023
+    },
+    "id" : "I43E8BE25FA0C1388",
+    "mapItemIdentifier" : "I43E8BE25FA0C1388",
+    "name" : "DOMA Center"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.454733,
+      "longitude" : 30.6212663
+    },
+    "id" : "I34AA8AA86D4042F1",
+    "mapItemIdentifier" : "I34AA8AA86D4042F1",
+    "name" : "ВК Експрес"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4642985,
+      "longitude" : 30.6101479
+    },
+    "id" : "IC60246EFAA1D15DD",
+    "mapItemIdentifier" : "IC60246EFAA1D15DD",
+    "name" : "Сільпо"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4619163,
+      "longitude" : 30.627324
+    },
+    "id" : "I9DF94C02AF583E69",
+    "mapItemIdentifier" : "I9DF94C02AF583E69",
+    "name" : "Супер-пупер маркет Shket"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.454215,
+      "longitude" : 30.627601
+    },
+    "id" : "I79DB6B9BE6F27B9A",
+    "mapItemIdentifier" : "I79DB6B9BE6F27B9A",
+    "name" : "Фора"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4583578,
+      "longitude" : 30.6035918
+    },
+    "id" : "I958CB7E2D14657DF",
+    "mapItemIdentifier" : "I958CB7E2D14657DF",
+    "name" : "Santechshara, Мир надежной сантехники"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4626779,
+      "longitude" : 30.6280643
+    },
+    "id" : "IA1FBC3EA93F6D76B",
+    "mapItemIdentifier" : "IA1FBC3EA93F6D76B",
+    "name" : "Квіти"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4554192,
+      "longitude" : 30.629167
+    },
+    "id" : "IA15002B2315AE1D2",
+    "mapItemIdentifier" : "IA15002B2315AE1D2",
+    "name" : "L O V A N D B A G"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.459266,
+      "longitude" : 30.602213
+    },
+    "id" : "IA0B70F76AA22895F",
+    "mapItemIdentifier" : "IA0B70F76AA22895F",
+    "name" : "Moryachok Manufaktur"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4644365,
+      "longitude" : 30.6286436
+    },
+    "id" : "IFC9C7EDCDBA9E31F",
+    "mapItemIdentifier" : "IFC9C7EDCDBA9E31F",
+    "name" : "BOX Експрес Маркет"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4554241,
+      "longitude" : 30.631004
+    },
+    "id" : "IF96811D9F30E3EA3",
+    "mapItemIdentifier" : "IF96811D9F30E3EA3",
+    "name" : "Галя Балувана"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4520427,
+      "longitude" : 30.6302476
+    },
+    "id" : "I4C7B2F6482F9036D",
+    "mapItemIdentifier" : "I4C7B2F6482F9036D",
+    "name" : "sun.flower.kyiv"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.456836,
+      "longitude" : 30.631482
+    },
+    "id" : "IA211071D88FDBFAC",
+    "mapItemIdentifier" : "IA211071D88FDBFAC",
+    "name" : "TERRA INCOGNITA"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4553181,
+      "longitude" : 30.6314613
+    },
+    "id" : "I9E77F6A48C4152A7",
+    "mapItemIdentifier" : "I9E77F6A48C4152A7",
+    "name" : "Еко лавка - Натуральні продукти"
+  },
+  {
+    "category" : "store",
+    "coordinate" : {
+      "latitude" : 50.4553181,
+      "longitude" : 30.6314613
+    },
+    "id" : "I12FF4EE610BA6640",
+    "mapItemIdentifier" : "I12FF4EE610BA6640",
+    "name" : "Иконная Лавка"
+  },
+  {
+    "category" : "gasStation",
+    "coordinate" : {
+      "latitude" : 50.4635828,
+      "longitude" : 30.6005985
+    },
+    "id" : "I34FEF339191737E2",
+    "mapItemIdentifier" : "I34FEF339191737E2",
+    "name" : "KLO"
+  },
+  {
+    "category" : "gasStation",
+    "coordinate" : {
+      "latitude" : 50.4518207,
+      "longitude" : 30.6316848
+    },
+    "id" : "I8BDAF8EC99CF2CC5",
+    "mapItemIdentifier" : "I8BDAF8EC99CF2CC5",
+    "name" : "КЛО"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4587608,
+      "longitude" : 30.6322861
+    },
+    "id" : "I5375330CD599963E",
+    "mapItemIdentifier" : "I5375330CD599963E",
+    "name" : "NOVUS"
+  },
+  {
+    "category" : "foodMarket",
+    "coordinate" : {
+      "latitude" : 50.4559404,
+      "longitude" : 30.6321359
+    },
+    "id" : "I3DAE8F08151C2285",
+    "mapItemIdentifier" : "I3DAE8F08151C2285",
+    "name" : "Ежевика"
+  }
+]

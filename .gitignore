@@ -1,0 +1,13 @@
+.DS_Store
+xcuserdata/
+*.xcuserstate
+# Генерується XcodeGen з project.yml
+StoneNavigationEmulation/StoneNavigationEmulation.xcodeproj/
+StoneNavigationEmulation/StoneNavigationEmulation/Info.plist
+.build/
+.swiftpm/
+DerivedData/
+build/
+*.xcresult
+# Особисті Team ID і bundle ID (див. Config/Signing.xcconfig)
+StoneNavigationEmulation/Config/Local.xcconfig
