@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="dark" lang="uk">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <script>(function () { var d = document.documentElement; d.classList.add('js'); try { if ((localStorage.getItem('theme') || 'dark') !== 'dark') d.classList.remove('dark'); } catch (e) { } })();</script>
     <meta name="description"
-        content="Stone Nav is a free, open-source car navigator for iPhone that keeps guiding you when GPS drops out or gets spoofed: it moves your position along the route and lets you correct it in a tap." />
-    <title>Stone Nav – Navigation that survives GPS loss</title>
+        content="Stone Nav: безкоштовний навігатор для авто на iPhone з відкритим кодом. Коли GPS зник або його підмінили, він сам веде позицію маршрутом, а ви підправляєте її одним тапом." />
+    <title>Stone Nav – навігація, яка не губиться без GPS</title>
     <link rel="icon" type="image/png" sizes="48x48" href="resources/favicon-48.png" />
     <link rel="apple-touch-icon" href="resources/apple-touch-icon.png" />
     <link rel="canonical" href="https://foxfollow.github.io/stone-navigation-emulation/" />
-    <link rel="alternate" hreflang="en" href="https://foxfollow.github.io/stone-navigation-emulation/" />
-    <link rel="alternate" hreflang="uk" href="https://foxfollow.github.io/stone-navigation-emulation/index-ua.html" />
+    <link rel="alternate" hreflang="en" href="https://foxfollow.github.io/stone-navigation-emulation/index-en.html" />
+    <link rel="alternate" hreflang="uk" href="https://foxfollow.github.io/stone-navigation-emulation/" />
     <link rel="alternate" hreflang="x-default" href="https://foxfollow.github.io/stone-navigation-emulation/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Stone Nav" />
-    <meta property="og:title" content="Stone Nav – Navigation that survives GPS loss" />
-    <meta property="og:description" content="Free, open-source iPhone navigator that keeps driving your position along the route when GPS is lost or spoofed." />
+    <meta property="og:title" content="Stone Nav – навігація, яка не губиться без GPS" />
+    <meta property="og:description" content="Безкоштовний навігатор для iPhone: коли GPS зник або підмінений, позиція і далі рухається маршрутом." />
     <meta property="og:url" content="https://foxfollow.github.io/stone-navigation-emulation/" />
+    <meta property="og:locale" content="uk_UA" />
     <meta property="og:image" content="https://foxfollow.github.io/stone-navigation-emulation/resources/icon-512.png" />
     <meta name="twitter:card" content="summary" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -50,23 +51,23 @@
                 <span class="text-lg font-semibold tracking-tight nav-brand">Stone Nav</span>
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="#how">How it works</a>
-                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="#screens">Screens</a>
-                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="#features">Features</a>
-                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="installation.html">Installation</a>
+                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="#how">Як це працює</a>
+                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="#screens">Екрани</a>
+                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="#features">Можливості</a>
+                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="installation.html">Встановлення</a>
                 <a class="nav-link text-gray-400 hover:text-white transition-colors" href="https://github.com/foxfollow/stone-navigation-emulation">GitHub</a>
             </nav>
             <div class="flex items-center gap-3">
                 <div class="relative group" id="language-picker">
                     <button class="nav-btn flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-medium">
-                        <span>EN</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        <span>UA</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
                     </button>
                     <div class="lang-dropdown absolute right-0 mt-2 w-40 rounded-xl border border-white/10 bg-dark-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all py-2 z-50">
-                        <a class="block px-4 py-2 hover:bg-white/5 text-sm font-medium" href="index.html">English</a>
-                        <a class="block px-4 py-2 hover:bg-white/5 text-sm" href="index-ua.html">Українська</a>
+                        <a class="block px-4 py-2 hover:bg-white/5 text-sm" href="index-en.html">English</a>
+                        <a class="block px-4 py-2 hover:bg-white/5 text-sm font-medium" href="index.html">Українська</a>
                     </div>
                 </div>
-                <button aria-label="Toggle theme" id="theme-toggle" class="nav-btn p-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all" onclick="toggleTheme()">
+                <button aria-label="Змінити тему" id="theme-toggle" class="nav-btn p-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all" onclick="toggleTheme()">
                     <i class="fa-solid fa-sun text-sm text-yellow-400" id="theme-icon-fa"></i>
                 </button>
             </div>
@@ -81,26 +82,26 @@
                 <img alt="" class="w-24 h-24 mx-auto rounded-[22px] drop-shadow-2xl" src="resources/icon-512.png" />
             </div>
             <div class="anim-fade hero-badge inline-flex flex-wrap justify-center items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-medium mb-8 font-mono tracking-wide">
-                Free · Open Source · iPhone · iOS 27+
+                Безкоштовно · Відкритий код · iOS 27+
             </div>
             <h1 class="anim-fade anim-d1 hero-title font-mono text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
-                Keeps driving when <span class="accent">GPS goes dark.</span>
+                Веде далі, <span class="accent">коли GPS зник.</span>
             </h1>
             <p class="anim-fade anim-d2 hero-sub text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                A car navigator for iPhone that doesn't lose you when GPS drops out or gets spoofed. It keeps moving your position along the route, and you can correct it in a tap.
+                Навігатор для авто на iPhone, який не губить вас, коли GPS пропадає або його підмінюють. Він сам рухає вашу позицію маршрутом, а ви підправляєте її одним тапом.
             </p>
             <div class="anim-fade anim-d3 flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
                 <a href="installation.html"
                     class="bg-primary hover:bg-blue-600 hover:-translate-y-0.5 px-8 py-3 rounded-xl font-semibold flex items-center gap-2 transition-all shadow-lg shadow-blue-500/20 text-white no-underline">
-                    <i class="fa-solid fa-mobile-screen"></i> Install on iPhone
+                    <i class="fa-solid fa-mobile-screen"></i> Поставити на iPhone
                 </a>
                 <a href="https://github.com/foxfollow/stone-navigation-emulation"
                     class="btn-secondary border border-white/10 bg-white/5 hover:bg-white/10 px-8 py-3 rounded-xl font-semibold flex items-center gap-2 transition-all no-underline">
-                    <i class="fa-brands fa-github text-xl"></i> View on GitHub
+                    <i class="fa-brands fa-github text-xl"></i> Код на GitHub
                 </a>
             </div>
             <p class="anim-fade anim-d4 note inline-block text-sm text-amber-200/90 bg-amber-500/10 border border-amber-500/20 rounded-xl px-4 py-2 mb-16">
-                <i class="fa-solid fa-circle-info mr-1"></i> Not on the App Store: you put it on your phone from a Mac with a free Apple ID.
+                <i class="fa-solid fa-circle-info mr-1"></i> Його немає в App Store: застосунок ставлять на телефон із Mac через безкоштовний Apple ID.
             </p>
             <div class="nav-demo"></div>
         </section>
@@ -108,30 +109,30 @@
         <!-- How it works -->
         <section class="max-w-6xl mx-auto px-4 mb-32" id="how">
             <div class="reveal text-center mb-14">
-                <h2 class="section-title text-3xl font-bold mb-4">What happens when GPS fails</h2>
-                <p class="section-sub text-gray-400 max-w-2xl mx-auto">Jamming, spoofing, tunnels, dense city blocks. The app notices on its own and switches modes, so you don't have to.</p>
+                <h2 class="section-title text-3xl font-bold mb-4">Що буває, коли GPS підводить</h2>
+                <p class="section-sub text-gray-400 max-w-2xl mx-auto">Глушіння, підміна, тунелі, щільна забудова. Застосунок сам це помічає і перемикає режим, вам нічого не треба робити.</p>
             </div>
             <div class="flow reveal grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6 text-center">
                 <div class="flow-line" aria-hidden="true"></div>
                 <div class="flow-step">
                     <div class="flow-dot text-gps"><i class="fa-solid fa-location-arrow"></i></div>
                     <h3 class="font-bold mb-2">GPS</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Your position comes from GPS and is always snapped to the route line.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Позиція береться з GPS і завжди лежить на лінії маршруту.</p>
                 </div>
                 <div class="flow-step">
                     <div class="flow-dot" style="color:#ff6b5e"><i class="fa-solid fa-satellite-dish"></i></div>
-                    <h3 class="font-bold mb-2">Lost or spoofed</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">A location error, a stale fix, poor accuracy, or a jump no car could make.</p>
+                    <h3 class="font-bold mb-2">Зник або підмінений</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Помилка геолокації, застаріла точка, погана точність або стрибок, якого авто не могло зробити.</p>
                 </div>
                 <div class="flow-step">
                     <div class="flow-dot text-dr"><i class="fa-solid fa-diamond"></i></div>
-                    <h3 class="font-bold mb-2">Dead reckoning</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">The dot keeps driving along the route at the route's average speed, your last GPS speed or your own.</p>
+                    <h3 class="font-bold mb-2">Розрахункова позиція</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Точка їде маршрутом далі із середньою швидкістю маршруту, останньою швидкістю з GPS або вашою.</p>
                 </div>
                 <div class="flow-step">
                     <div class="flow-dot text-gps"><i class="fa-solid fa-circle-check"></i></div>
-                    <h3 class="font-bold mb-2">Careful return</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">After 5 s of good signal GPS takes over again. If it shows somewhere far away, you're asked first.</p>
+                    <h3 class="font-bold mb-2">Обережне повернення</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Після 5 с доброго сигналу знову веде GPS. Якщо він показує щось далеко, застосунок спершу запитає вас.</p>
                 </div>
             </div>
         </section>
@@ -139,94 +140,93 @@
         <!-- Screens -->
         <section class="max-w-6xl mx-auto px-4 mb-32" id="screens">
             <div class="reveal text-center mb-10">
-                <h2 class="section-title text-3xl font-bold mb-4">Made for a glance at the wheel</h2>
-                <p class="section-sub text-gray-400">Dark map, big buttons, the mode always in color: blue is GPS, amber is the estimate.</p>
+                <h2 class="section-title text-3xl font-bold mb-4">Щоб вистачало одного погляду за кермом</h2>
+                <p class="section-sub text-gray-400">Темна карта, великі кнопки, режим завжди видно з кольору: синій — GPS, бурштиновий — розрахунок.</p>
             </div>
             <div class="shots reveal">
-                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'GPS: route, maneuver and mode at a glance')"><img alt="Navigation with GPS" src="resources/screens/gps.jpg" loading="lazy" /></div>
-                    <figcaption><b>GPS</b>Route, maneuver and mode at a glance.</figcaption></figure>
-                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'No GPS: amber estimated position with a timer')"><img alt="Dead reckoning without GPS" src="resources/screens/lost.jpg" loading="lazy" /></div>
-                    <figcaption><b>No GPS</b>Amber means estimated; the timer shows for how long.</figcaption></figure>
-                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Spoofing: an impossible jump asks before switching back')"><img alt="GPS spoofing prompt" src="resources/screens/spoof.jpg" loading="lazy" /></div>
-                    <figcaption><b>Spoofing</b>An impossible jump asks before switching back.</figcaption></figure>
-                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Landmarks along the road')"><img alt="Landmarks list" src="resources/screens/landmarks.jpg" loading="lazy" /></div>
-                    <figcaption><b>Landmarks</b>Places along the road to confirm where you are.</figcaption></figure>
-                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Point on the map: I\'m here, Route from here, Go here')"><img alt="Point on the map" src="resources/screens/point.jpg" loading="lazy" /></div>
-                    <figcaption><b>Point on the map</b>Long press: “I'm here”, “Route from here”, “Go here”.</figcaption></figure>
-                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Search with saved places')"><img alt="Search" src="resources/screens/search.jpg" loading="lazy" /></div>
-                    <figcaption><b>Search</b>Addresses and places, home, work and recents.</figcaption></figure>
-                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Settings')"><img alt="Settings" src="resources/screens/settings.jpg" loading="lazy" /></div>
-                    <figcaption><b>Settings</b>Voice, thresholds, speeds, panel side.</figcaption></figure>
+                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'GPS: маршрут, маневр і режим одним поглядом')"><img alt="Навігація з GPS" src="resources/screens/gps.jpg" loading="lazy" /></div>
+                    <figcaption><b>GPS</b>Маршрут, маневр і режим одним поглядом.</figcaption></figure>
+                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Без GPS: бурштинова розрахункова позиція з таймером')"><img alt="Розрахункова позиція без GPS" src="resources/screens/lost.jpg" loading="lazy" /></div>
+                    <figcaption><b>Без GPS</b>Бурштиновий — позиція розрахункова, таймер показує скільки.</figcaption></figure>
+                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Підміна: неможливий стрибок — спершу запитання')"><img alt="Запит про підміну GPS" src="resources/screens/spoof.jpg" loading="lazy" /></div>
+                    <figcaption><b>Підміна</b>Неможливий стрибок: спершу запитання, потім GPS.</figcaption></figure>
+                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Орієнтири вздовж дороги')"><img alt="Список орієнтирів" src="resources/screens/landmarks.jpg" loading="lazy" /></div>
+                    <figcaption><b>Орієнтири</b>Місця вздовж дороги, щоб звірити, де ви.</figcaption></figure>
+                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Точка на карті: Я тут, Маршрут звідси, Сюди')"><img alt="Точка на карті" src="resources/screens/point.jpg" loading="lazy" /></div>
+                    <figcaption><b>Точка на карті</b>Довгий тап: «Я тут», «Маршрут звідси», «Сюди».</figcaption></figure>
+                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Пошук і збережені адреси')"><img alt="Пошук" src="resources/screens/search.jpg" loading="lazy" /></div>
+                    <figcaption><b>Пошук</b>Адреси й місця, дім, робота, останні.</figcaption></figure>
+                <figure class="shot"><div class="screenshot-card" onclick="openModal(this.querySelector('img'), 'Налаштування')"><img alt="Налаштування" src="resources/screens/settings.jpg" loading="lazy" /></div>
+                    <figcaption><b>Налаштування</b>Голос, пороги, швидкості, бік панелі.</figcaption></figure>
             </div>
-            <p class="text-center text-xs text-gray-500 mt-2">The app's interface is in Ukrainian.</p>
-        </section>
+                    </section>
 
         <!-- Features -->
         <section class="max-w-7xl mx-auto px-4 mb-32" id="features">
             <div class="reveal text-center mb-12">
-                <h2 class="section-title text-3xl font-bold mb-4">Everything for a road without GPS</h2>
-                <p class="section-sub text-gray-400">And nothing that needs an account.</p>
+                <h2 class="section-title text-3xl font-bold mb-4">Усе для дороги без GPS</h2>
+                <p class="section-sub text-gray-400">І нічого, для чого потрібен акаунт.</p>
             </div>
             <div class="feat-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-hand-pointer text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Correct in one tap</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">±5 km/h, Pause, 50 m back or forward, or tap the route line to put yourself right there.</p>
+                    <h4 class="font-bold mb-2">Корекція одним тапом</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">±5 км/год, «Пауза», 50 м назад чи вперед, або тап по лінії маршруту, щоб поставити себе саме туди.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-shield-halved text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Spoof detection</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Flags jumps a car couldn't make and sharp turns where the route goes straight.</p>
+                    <h4 class="font-bold mb-2">Виявлення підміни</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Помічає стрибки, яких авто не могло зробити, і різкі повороти там, де маршрут іде прямо.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-volume-high text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Ukrainian voice</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Prompts before and at every turn, over your music, with the screen off and through the car speakers.</p>
+                    <h4 class="font-bold mb-2">Голос українською</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Підказки перед кожним поворотом і на ньому, поверх музики, з вимкненим екраном і через динаміки авто.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-cloud-arrow-down text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Works offline</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">The route, its steps and its line are saved on the phone, so navigation carries on without internet.</p>
+                    <h4 class="font-bold mb-2">Працює без інтернету</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Маршрут, його кроки й лінія зберігаються на телефоні, тож навігація триває і без мережі.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-location-dot text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Landmarks ahead</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">17 kinds of places along the road. Pass one, tap “I'm next to it”, and the dot jumps there.</p>
+                    <h4 class="font-bold mb-2">Орієнтири попереду</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">17 типів місць уздовж дороги. Проїжджаєте повз — «Я біля нього», і точка стає туди.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-gauge-high text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Motion sensors</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">The dot waits at red lights, and a turn felt by the gyroscope offers to pull it to the next turn.</p>
+                    <h4 class="font-bold mb-2">Датчики руху</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Точка чекає на світлофорі, а поворот, який відчув гіроскоп, пропонує підтягнути її до повороту на маршруті.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-route text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Took a wrong turn?</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Long-press where you really are and pick “Route from here” to the same destination.</p>
+                    <h4 class="font-bold mb-2">Звернули не туди?</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Довгий тап там, де ви насправді, і «Маршрут звідси» до того самого пункту призначення.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-star text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Your places</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Home, work, favourites and recent destinations, right above search suggestions.</p>
+                    <h4 class="font-bold mb-2">Мої адреси</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Дім, робота, вибрані й останні адреси одразу над підказками пошуку.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-hand text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Left or right hand</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Big buttons, and the bottom panel mirrors for whichever hand reaches the phone.</p>
+                    <h4 class="font-bold mb-2">Під ліву чи праву руку</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Великі кнопки, а нижня панель віддзеркалюється під ту руку, якою ви тягнетеся до телефона.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-moon text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Dims itself</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Optional dimming after 30 s without touches; any touch brings the screen back.</p>
+                    <h4 class="font-bold mb-2">Затемнення</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">За бажанням екран темніє через 30 с без дотиків, будь-який дотик його повертає.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-flask text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">Test it at home</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">GPX replay with a GPS loss and a fake 1.5 km jump built in, so you can see every mode from the sofa.</p>
+                    <h4 class="font-bold mb-2">Перевірка вдома</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Програвання GPX-треку зі зникненням GPS і фальшивим стрибком на 1,5 км: усі режими можна побачити з дивана.</p>
                 </div>
                 <div class="reveal card-gradient feat-card p-6 rounded-2xl">
                     <i class="fa-solid fa-ban text-2xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold mb-2">No Russia or Belarus</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Addresses there are hidden from search and can't be saved or routed to.</p>
+                    <h4 class="font-bold mb-2">Без Росії та Білорусі</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Адреси там приховані з пошуку, їх не можна зберегти чи прокласти до них маршрут.</p>
                 </div>
             </div>
         </section>
@@ -236,44 +236,47 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="reveal card-gradient p-8 rounded-2xl">
                     <div class="mb-4"><i class="fa-solid fa-user-shield text-2xl text-blue-400"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Private by design</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">No accounts, no servers of its own, no analytics or tracking. Your position stays on the phone. Only route requests and place searches go to Apple Maps.</p>
+                    <h3 class="text-xl font-bold mb-3">Приватність за замовчуванням</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Жодних акаунтів, власних серверів, аналітики чи стеження. Ваша позиція лишається на телефоні. До Apple Maps ідуть лише запити маршрутів і пошуку місць.</p>
                 </div>
                 <div class="reveal card-gradient p-8 rounded-2xl" style="transition-delay: 100ms">
                     <div class="mb-4"><i class="fa-solid fa-map text-2xl text-blue-400"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Apple Maps under the hood</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Free and without API keys. Map data in Ukraine isn't perfect, so map, routing and search sit behind interfaces and another provider can be added later.</p>
+                    <h3 class="text-xl font-bold mb-3">Під капотом Apple Maps</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Безкоштовно і без API-ключів. Дані в Україні не ідеальні, тому карта, маршрути й пошук сховані за інтерфейсами, і пізніше можна додати іншого постачальника.</p>
                 </div>
             </div>
         </section>
 
         <!-- Install -->
         <section class="max-w-4xl mx-auto px-4 mb-32" id="install">
-            <div class="reveal card-gradient p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="flex items-start gap-4">
+            <div class="reveal card-gradient p-8 rounded-2xl">
+                <div class="flex items-start gap-4 mb-6">
                     <div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-xl flex items-center justify-center border border-white/10">
                         <i class="fa-brands fa-apple text-xl"></i>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-lg mb-1">Put it on your iPhone</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">You need a Mac with Xcode, an iPhone on iOS 27 and a free Apple ID. About an hour the first time; with a free account, re-install every 7 days.</p>
-                        <a href="installation.html" class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-blue-400 hover:text-blue-300 no-underline">Step-by-step guide <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                        <h3 class="font-semibold text-lg mb-1">Поставте собі на iPhone</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Потрібні Mac з Xcode, iPhone з iOS 27 і безкоштовний Apple ID. Першого разу близько години; з безкоштовним акаунтом перевстановлювати раз на 7 днів.</p>
+                        <a href="installation.html" class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-blue-400 hover:text-blue-300 no-underline">Покрокова інструкція <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
-                <div class="code-box w-full md:w-auto max-w-full min-w-0 overflow-x-auto flex items-center justify-between gap-4 p-4 rounded-xl border border-white/10 font-mono text-[12.5px]">
-                    <code class="text-blue-300 leading-relaxed" id="build-cmd">brew install xcodegen
-xcodegen generate
-open StoneNavigationEmulation.xcodeproj</code>
-                    <button class="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 flex-shrink-0" aria-label="Copy" data-copy="#build-cmd">
+                <p class="text-sm text-gray-400 leading-relaxed mb-3">Якщо Homebrew уже встановлено, ці команди в Терміналі завантажать код і відкриють проєкт:</p>
+                <div class="code-box flex items-start justify-between gap-4 p-4 rounded-xl border border-white/10 font-mono text-[12.5px]">
+                    <code class="text-blue-300 leading-relaxed" id="build-cmd">git clone https://github.com/foxfollow/stone-navigation-emulation.git
+cd stone-navigation-emulation/StoneNavigationEmulation
+brew install xcodegen
+xcodegen generate && open StoneNavigationEmulation.xcodeproj</code>
+                    <button class="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 flex-shrink-0" aria-label="Копіювати" data-copy="#build-cmd">
                         <i class="fa-regular fa-copy"></i>
                     </button>
                 </div>
+                <p class="text-xs text-gray-500 leading-relaxed mt-3">Далі в Xcode виберіть свою команду і змініть Bundle Identifier (<a class="underline" href="installation.html#team">крок 5</a>), підключіть iPhone і натисніть ▶. Без Homebrew почніть з <a class="underline" href="installation.html#steps">інструкції</a>.</p>
             </div>
         </section>
     </main>
 
     <div id="imageModal" class="modal" onclick="closeModal()">
-        <button class="modal-close" aria-label="Close">&times;</button>
+        <button class="modal-close" aria-label="Закрити">&times;</button>
         <img id="modalImage" class="modal-content" alt="" />
         <div id="modalCaption" class="modal-caption"></div>
     </div>
@@ -285,27 +288,27 @@ open StoneNavigationEmulation.xcodeproj</code>
                     <img alt="" class="w-6 h-6 rounded-md" src="resources/icon-512.png" />
                     <span class="font-semibold">Stone Nav</span>
                 </div>
-                <p class="text-sm text-gray-400 leading-relaxed">A car navigator that keeps guiding you when GPS is lost or spoofed.</p>
+                <p class="text-sm text-gray-400 leading-relaxed">Навігатор для авто, що веде далі, коли GPS зник або підмінений.</p>
             </div>
             <div>
-                <h5 class="font-semibold mb-6">Resources</h5>
+                <h5 class="font-semibold mb-6">Ресурси</h5>
                 <ul class="space-y-4 text-sm text-gray-400">
-                    <li><a class="hover:text-white transition-colors" href="installation.html">Installation Guide</a></li>
-                    <li><a class="hover:text-white transition-colors" href="installation.html#troubleshooting">Troubleshooting</a></li>
-                    <li><a class="hover:text-white transition-colors" href="https://github.com/foxfollow/stone-navigation-emulation/blob/main/docs/ARCHITECTURE.md">Architecture</a></li>
+                    <li><a class="hover:text-white transition-colors" href="installation.html">Інструкція зі встановлення</a></li>
+                    <li><a class="hover:text-white transition-colors" href="installation.html#troubleshooting">Якщо щось не так</a></li>
+                    <li><a class="hover:text-white transition-colors" href="https://github.com/foxfollow/stone-navigation-emulation/blob/main/docs/ARCHITECTURE.md">Архітектура</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-semibold mb-6">Links</h5>
+                <h5 class="font-semibold mb-6">Посилання</h5>
                 <ul class="space-y-4 text-sm text-gray-400">
                     <li><a class="hover:text-white transition-colors" href="https://github.com/foxfollow/stone-navigation-emulation">GitHub</a></li>
                     <li><a class="hover:text-white transition-colors" href="https://github.com/foxfollow/stone-navigation-emulation/issues">Issues</a></li>
-                    <li><a class="hover:text-white transition-colors" href="https://github.com/foxfollow/stone-navigation-emulation/blob/main/LICENSE">License (MIT)</a></li>
+                    <li><a class="hover:text-white transition-colors" href="https://github.com/foxfollow/stone-navigation-emulation/blob/main/LICENSE">Ліцензія (MIT)</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom max-w-7xl mx-auto px-4 border-t border-white/5 pt-8 text-center text-[11px] text-gray-500">
-            <p><strong>Requirements:</strong> iPhone with iOS 27 or later · Mac with Xcode 27 to install · Built with SwiftUI and MapKit</p>
+            <p><strong>Вимоги:</strong> iPhone з iOS 27 або новішою · Mac з Xcode 27 для встановлення · SwiftUI і MapKit</p>
             <p class="mt-2">&copy; 2026 foxfollow</p>
         </div>
     </footer>

@@ -13,7 +13,7 @@
   <img src="docs/screenshots/landmarks.png" width="200" alt="Орієнтири">
 </p>
 
-Сайт проєкту: **[foxfollow.github.io/stone-navigation-emulation](https://foxfollow.github.io/stone-navigation-emulation/index-ua.html)**.
+Сайт проєкту: **[foxfollow.github.io/stone-navigation-emulation](https://foxfollow.github.io/stone-navigation-emulation/)**.
 
 Застосунку немає в App Store. Його ставлять на свій телефон самі, через Mac. Нижче покроково, як це зробити без досвіду програмування.
 

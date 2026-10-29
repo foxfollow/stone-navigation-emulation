@@ -24,6 +24,8 @@ html { scroll-behavior: smooth; }
 /* Long commands scroll inside the box; the copy button stays put */
 .code-box > code { display: block; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .code-box > code::-webkit-scrollbar { display: none; }
+/* On phones long commands wrap instead of hiding past the edge; copying still gives the exact text */
+@media (max-width: 640px) { .code-box > code { white-space: pre-wrap; overflow-wrap: anywhere; } }
 
 /* Ambient glow behind the hero: route blue on one side, dead-reckoning amber on the other */
 .hero-glow {
@@ -34,6 +36,7 @@ html { scroll-behavior: smooth; }
         radial-gradient(ellipse at 70% 60%, rgba(242, 166, 59, 0.12), transparent 60%);
     filter: blur(48px); border-radius: 50%; pointer-events: none; z-index: -1;
     animation: glowBreathe 12s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 @keyframes glowBreathe {
     0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }

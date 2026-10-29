@@ -50,15 +50,16 @@
     const ROUTE = 'M 0 140 L 0 -260 Q 0 -300 36 -318 L 204 -402 Q 240 -420 240 -460 L 240 -700 ' +
         'Q 240 -740 204 -758 L 36 -842 Q 0 -860 0 -900 L 0 -1400';
     const PINS = [
-        { x: 26, y: -150, color: '#3dcf91', icon: '', side: 1 },
-        { x: 88, y: -376, color: '#f25c7a', icon: '', side: -1 },
-        { x: 214, y: -600, color: '#d1945c', icon: '', side: -1 },
-        { x: 131, y: -822, color: '#ff8fab', icon: '', side: 1 },
-        { x: -26, y: -1010, color: '#4080f2', icon: '', side: -1 },
+        { x: 26, y: -150, color: '#3dcf91', icon: 'fa-gas-pump', side: 1 },
+        { x: 88, y: -376, color: '#f25c7a', icon: 'fa-prescription-bottle-medical', side: -1 },
+        { x: 214, y: -600, color: '#d1945c', icon: 'fa-mug-hot', side: -1 },
+        { x: 131, y: -822, color: '#ff8fab', icon: 'fa-cart-shopping', side: 1 },
+        { x: -26, y: -1010, color: '#4080f2', icon: 'fa-square-parking', side: -1 },
     ];
     const LOOP = 26, LOST_AT = 6, BOOST_AT = 11, SPOOF_AT = 13.6, SHEET = [14, 17.2], KEEP_AT = 16.5, BACK_AT = 19.5;
     const METERS = 6; // metres per map unit
     const PUCK = { x: 165, y: 640 * 0.53 };
+    const WORLD = { x: -420, y: -1620, w: 1080, h: 2060 }; // map bounds in map units
 
     function initNavDemo() {
         const host = $('.nav-demo');
@@ -69,10 +70,12 @@
             if (parent) parent.append(node);
             return node;
         };
+        const u = n => `calc(${n} * var(--u))`;
+        const place = (node, x, y) => { node.style.left = u(x - WORLD.x); node.style.top = u(y - WORLD.y); };
 
         host.innerHTML =
             '<div class="nd" aria-hidden="true">' +
-            '<svg class="nd-map" viewBox="0 0 330 640" preserveAspectRatio="xMidYMid slice"><g class="nd-world"></g></svg>' +
+            `<div class="nd-pan"><svg viewBox="${WORLD.x} ${WORLD.y} ${WORLD.w} ${WORLD.h}"></svg></div>` +
             '<div class="nd-puck"><div class="nd-halo"></div><div class="nd-dot"><i class="fa-solid fa-location-arrow"></i></div></div>' +
             '<div class="nd-status"><span class="nd-clock"></span><span><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-three-quarters"></i></span></div>' +
             '<div class="nd-top">' +
@@ -93,28 +96,28 @@
                 `<span data-step="${i}"><i class="fa-solid fa-circle" style="color:${['#4d8cff', '#f2a63b', '#ff6b5e', '#4d8cff'][i]}"></i>${c}</span>`).join('') + '</div>';
 
         const nd = $('.nd', host);
-        const world = $('.nd-world', host);
+        const pan = $('.nd-pan', host);
+        // Pixels per map unit for the per-frame transform; CSS sizes use var(--u) and scale on their own.
+        let k = nd.clientWidth / 330;
+        const world = $('.nd-pan svg', host);
 
-        // Map: city blocks, a few parks, a river under the bridge, then the route on top.
+        // Map, drawn once: city blocks, a few parks, a river under the bridge, then the route on top.
         const XS = [-400, -280, -160, -60, 110, 280, 380, 500, 640];
-        const bg = el('g', {}, world);
-        el('path', { class: 'nd-water', d: 'M -400 -520 L 640 -610 L 640 -540 L -400 -450 Z' }, bg);
+        el('path', { class: 'nd-water', d: 'M -420 -520 L 660 -610 L 660 -540 L -420 -450 Z' }, world);
         for (let y = 400, row = 0; y > -1560; y -= 120, row++) {
             for (let c = 0; c < XS.length - 1; c++) {
                 const top = y - 120 + 9, h = 120 - 18, left = XS[c] + 9, w = XS[c + 1] - XS[c] - 18;
                 if (top < -520 + 40 && top + h > -610) continue; // keep the river clear
-                el('rect', { class: (row * 7 + c * 3) % 11 === 0 ? 'nd-park' : 'nd-block', x: left, y: top, width: w, height: h, rx: 8 }, bg);
+                el('rect', { class: (row * 7 + c * 3) % 11 === 0 ? 'nd-park' : 'nd-block', x: left, y: top, width: w, height: h, rx: 8 }, world);
             }
         }
         const streets = el('g', { class: 'nd-street', 'stroke-width': 7 }, world);
         XS.forEach(x => el('line', { x1: x, y1: 420, x2: x, y2: -1600 }, streets));
         for (let y = 400; y > -1600; y -= 120) el('line', { x1: -420, y1: y, x2: 660, y2: y }, streets);
         el('path', { class: 'nd-road', d: ROUTE, 'stroke-width': 18 }, world);
-        el('path', { class: 'nd-route-glow', d: ROUTE, 'stroke-width': 14 }, world);
+        el('path', { class: 'nd-route-glow', d: ROUTE, 'stroke-width': 18 }, world);
         const route = el('path', { class: 'nd-route', d: ROUTE, 'stroke-width': 7 }, world);
         const total = route.getTotalLength();
-        route.style.strokeDasharray = `${total} ${total}`;
-        $('.nd-route-glow', world).style.strokeDasharray = `${total} ${total}`;
 
         // Route geometry, sampled once: points, headings, turns and landmark positions along it.
         const STEP = 4, samples = [];
@@ -132,37 +135,31 @@
             return d < best.d ? { d, s: i * STEP } : best;
         }, { d: Infinity, s: 0 }).s;
 
+        // Markers are small HTML layers inside the moving pan, so updating a label repaints only that label.
+        const mark = (x, y, html) => {
+            const node = document.createElement('div');
+            node.className = 'nd-mark hide';
+            node.innerHTML = html;
+            place(node, x, y);
+            pan.append(node);
+            return node;
+        };
         const pins = PINS.map((p, i) => {
-            const g = el('g', { class: 'nd-pin hide', transform: `translate(${p.x} ${p.y})` }, world);
-            const pop = el('g', { class: 'pop' }, g);
-            el('path', { d: 'M -5 -6 L 0 0 L 5 -6 Z', fill: p.color }, pop);
-            el('circle', { cx: 0, cy: -17, r: 12, fill: p.color, stroke: '#fff', 'stroke-width': 2 }, pop);
-            const icon = el('text', { x: 0, y: -13, 'text-anchor': 'middle', style: 'font: 900 11px "Font Awesome 6 Free"; fill: #fff' }, pop);
-            icon.textContent = p.icon;
-            const label = el('g', { transform: `translate(${p.side * 18} -30)` }, g);
-            const name = TEXT.pins[i];
-            const width = Math.max(name.length * 6.4, 58) + 12;
-            el('rect', { class: 'nd-pin-label', x: p.side > 0 ? 0 : -width, y: 0, width, height: 30, rx: 6 }, label);
-            const t1 = el('text', { x: p.side > 0 ? 6 : -width + 6, y: 12.5 }, label);
-            t1.textContent = name;
-            const t2 = el('text', { class: 'dist', x: p.side > 0 ? 6 : -width + 6, y: 25 }, label);
-            return { g, dist: t2, s: sOf(p.x, p.y), shown: false };
+            const node = mark(p.x, p.y,
+                `<div class="nd-pin-dot" style="background:${p.color};--c:${p.color}"><i class="fa-solid ${p.icon}"></i></div>` +
+                `<div class="nd-pin-label ${p.side > 0 ? 'r' : 'l'}">${TEXT.pins[i]}<b></b></div>`);
+            return { node, dist: $('b', node), y: p.y, s: sOf(p.x, p.y), shown: false };
         });
-
-        const lastGps = el('g', { class: 'nd-lastgps hide' }, world);
-        el('circle', { r: 6, fill: '#6b7280', stroke: '#d1d5db', 'stroke-width': 2 }, lastGps);
-        const lastText = el('text', { x: 10, y: 4 }, lastGps);
-        lastText.textContent = TEXT.last;
-        const ghost = el('g', { class: 'nd-ghost hide' }, world);
-        el('circle', { class: 'ring', r: 9 }, ghost);
-        el('circle', { r: 6, fill: '#ff6b5e', stroke: '#fff', 'stroke-width': 2 }, ghost);
+        const lastGps = mark(0, 0, `<div class="nd-gps-dot"></div><div class="nd-gps-label">${TEXT.last}</div>`);
+        const ghost = mark(0, 0, '<div class="nd-ghost-ring"></div><div class="nd-ghost-dot"></div>');
 
         const ui = {
             clock: $('.nd-clock', host), dist: $('.nd-man-dist', host), manText: $('.nd-man-text', host),
             manIcon: $('.nd-man-icon i', host), title: $('.nd-mode-title .nd-swap', host), sub: $('.nd-mode-sub .nd-swap', host),
             right: $('.nd-mode-right', host), modeIcon: $('.nd-mode-icon i', host), arrow: $('.nd-dot i', host),
-            arr: $('.nd-arr', host), rem: $('.nd-rem', host), speed: $('.nd-speed', host), plus: $('.nd-btn.plus', host),
-            sheet: $('.nd-sheet', host), keep: $('.nd-btn.keep', host), replay: $('.nd-replay', host), caption: $$('.nav-demo-caption span', host),
+            arr: $('.nd-arr', host), rem: $('.nd-rem', host), speed: $('.nd-speed', host), speedNum: $('.nd-speed b', host),
+            plus: $('.nd-btn.plus', host), sheet: $('.nd-sheet', host), keep: $('.nd-btn.keep', host),
+            replay: $('.nd-replay', host), caption: $$('.nav-demo-caption span', host),
         };
 
         const S0 = 140, END = total - 260;
@@ -171,40 +168,49 @@
         const num = (x, digits) => x.toFixed(digits).replace('.', TEXT.dec);
         const meters = m => { const r = Math.max(10, Math.round(m / 10) * 10); return r >= 1000 ? `${num(m / 1000, 1)} ${TEXT.km}` : `${r} ${TEXT.m}`; };
         const hhmm = d => `${d.getHours()}:${String(d.getMinutes()).padStart(2, '0')}`;
+        // Every DOM write goes through these, so a frame only touches what actually changed.
         const set = (node, text, swap) => {
             if (node.textContent === text) return;
             node.textContent = text;
             if (swap) { node.classList.remove('in'); void node.offsetWidth; node.classList.add('in'); }
         };
+        const prop = (node, key, value) => { if (node.style[key] !== value) node.style[key] = value; };
+        const cls = (node, name, on) => { if (node.classList.contains(name) !== on) node.classList.toggle(name, on); };
         const tap = node => { node.classList.add('tap'); setTimeout(() => node.classList.remove('tap'), 280); };
-        let lostAt = null, ghostAt = null, fired = {};
+        let fired = {};
 
-        function render(t) {
+        // Every frame: only the map layer and the arrow move (both composited, no repaint).
+        function move(t) {
             const s = sAt(t);
             const p = at(s);
-            world.setAttribute('transform', `translate(${(PUCK.x - p.x).toFixed(1)} ${(PUCK.y - p.y).toFixed(1)})`);
-            route.style.strokeDashoffset = -s;
-            $('.nd-route-glow', world).style.strokeDashoffset = -s;
-            ui.arrow.style.rotate = `${heading(s) * 180 / Math.PI - 45}deg`;
+            pan.style.transform = `translate3d(${((PUCK.x - p.x + WORLD.x) * k).toFixed(1)}px, ${((PUCK.y - p.y + WORLD.y) * k).toFixed(1)}px, 0)`;
+            prop(ui.arrow, 'rotate', `${Math.round(heading(s) * 180 / Math.PI - 45)}deg`);
+        }
 
+        // A few times a second, like the app itself: texts, modes and markers.
+        function render(t) {
+            move(t);
+            const s = sAt(t);
+            const p = at(s);
             const dr = t >= LOST_AT && t < BACK_AT;
-            nd.classList.toggle('dr', dr);
+            cls(nd, 'dr', dr);
             set(ui.title, dr ? TEXT.dr : TEXT.gps, true);
             set(ui.sub, !dr ? TEXT.snapped : t < SPOOF_AT ? TEXT.lost : TEXT.spoof, true);
             const off = Math.max(0, Math.floor(t - LOST_AT));
             set(ui.right, dr ? `${TEXT.noGps} 00:${String(off).padStart(2, '0')}` : TEXT.acc);
-            ui.modeIcon.className = dr ? 'fa-solid fa-diamond' : 'fa-solid fa-location-arrow';
+            const modeIcon = dr ? 'fa-solid fa-diamond' : 'fa-solid fa-location-arrow';
+            if (ui.modeIcon.className !== modeIcon) ui.modeIcon.className = modeIcon;
 
             const next = turns.find(x => x.s > s);
             if (next) {
                 const i = turns.indexOf(next);
                 set(ui.dist, meters((next.s - s) * METERS));
                 set(ui.manText, `${next.dir > 0 ? TEXT.right : TEXT.left} ${TEXT.streets[i % TEXT.streets.length]}`);
-                ui.manIcon.style.rotate = `${next.dir * 45}deg`;
+                prop(ui.manIcon, 'rotate', `${next.dir * 45}deg`);
             } else {
                 set(ui.dist, meters((total - s) * METERS));
                 set(ui.manText, TEXT.straight);
-                ui.manIcon.style.rotate = '0deg';
+                prop(ui.manIcon, 'rotate', '0deg');
             }
 
             const speed = t >= BOOST_AT ? 50 : 45;
@@ -212,29 +218,27 @@
             const minutes = Math.max(1, Math.round(remaining / 1000 / speed * 60));
             set(ui.arr, hhmm(new Date(Date.now() + minutes * 60000)));
             set(ui.rem, `${minutes} ${TEXT.min} · ${num(remaining / 1000, 1)} ${TEXT.km}`);
-            set($('b', ui.speed), String(speed));
+            set(ui.speedNum, String(speed));
 
             pins.forEach(pin => {
                 // Only between the mode card and the panel, so labels never slide under them.
                 const ahead = pin.s - s;
-                const screenY = PUCK.y + PINS[pins.indexOf(pin)].y - p.y;
+                const screenY = PUCK.y + pin.y - p.y;
                 const show = ahead > -30 && screenY > 215 && screenY < 470;
-                if (show !== pin.shown) { pin.g.classList.toggle('hide', !show); pin.shown = show; }
+                if (show !== pin.shown) { pin.node.classList.toggle('hide', !show); pin.shown = show; }
                 if (show) set(pin.dist, ahead > 8 ? `${TEXT.in} ${meters(ahead * METERS)}` : TEXT.here);
             });
 
-            if (dr && lostAt === null) { lostAt = at(sAt(LOST_AT)); lastGps.setAttribute('transform', `translate(${lostAt.x} ${lostAt.y})`); }
-            if (!dr) lostAt = null;
-            lastGps.classList.toggle('hide', !dr);
+            if (dr && lastGps.classList.contains('hide')) { const g = at(sAt(LOST_AT)); place(lastGps, g.x, g.y); }
+            cls(lastGps, 'hide', !dr);
             const ghostOn = t >= SPOOF_AT && t < SHEET[1];
-            if (ghostOn && !ghostAt) { const g = at(sAt(SPOOF_AT)); ghostAt = g; ghost.setAttribute('transform', `translate(${g.x + 130} ${g.y - 70})`); }
-            if (!ghostOn) ghostAt = null;
-            ghost.classList.toggle('hide', !ghostOn);
-            ui.sheet.classList.toggle('show', t >= SHEET[0] && t < SHEET[1]);
+            if (ghostOn && ghost.classList.contains('hide')) { const g = at(sAt(SPOOF_AT)); place(ghost, g.x + 130, g.y - 70); }
+            cls(ghost, 'hide', !ghostOn);
+            cls(ui.sheet, 'show', t >= SHEET[0] && t < SHEET[1]);
 
             const step = t < LOST_AT ? 0 : t < SPOOF_AT ? 1 : t < BACK_AT ? 2 : 3;
-            ui.caption.forEach((c, i) => c.classList.toggle('on', i === step));
-            ui.replay.classList.toggle('on', t > LOOP - 0.5);
+            ui.caption.forEach((c, i) => cls(c, 'on', i === step));
+            cls(ui.replay, 'on', t > LOOP - 0.5);
             set(ui.clock, hhmm(new Date()));
         }
 
@@ -248,28 +252,36 @@
             if (t >= KEEP_AT && !fired.keep) { fired.keep = true; tap(ui.keep); }
         }
 
-        if (reduce) { render(9); return; }
+        if (reduce) { render(9); new ResizeObserver(() => { k = nd.clientWidth / 330; move(9); }).observe(nd); return; }
 
-        let t = 0, last = 0, raf = 0, onScreen = false, hovered = false;
+        // Runs only on screen, in a visible tab, after the phone's entrance animation,
+        // and (with a mouse) not while the pointer rests on it.
+        let t = 0, last = 0, raf = 0, onScreen = false, hovered = false, ready = false, shown = -1;
         const frame = now => {
             const dt = last ? Math.min(0.1, (now - last) / 1000) : 0;
             last = now;
             t += dt;
-            if (t >= LOOP) { t = 0; fired = {}; }
-            render(t);
+            if (t >= LOOP) { t = 0; fired = {}; shown = -1; }
+            if (t - shown >= 0.25) { shown = t; render(t); } else move(t);
             moments(t);
             raf = requestAnimationFrame(frame);
         };
         const sync = () => {
-            const run = onScreen && !hovered && !document.hidden;
+            const run = ready && onScreen && !hovered && !document.hidden;
             if (run && !raf) { last = 0; raf = requestAnimationFrame(frame); }
             if (!run && raf) { cancelAnimationFrame(raf); raf = 0; }
         };
         render(0);
+        new ResizeObserver(() => { k = nd.clientWidth / 330; move(t); }).observe(nd);
+        const start = () => { if (!ready) { ready = true; sync(); } };
+        nd.addEventListener('animationend', e => { if (e.target === nd) start(); });
+        setTimeout(start, 1800);
         new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; sync(); }).observe(nd);
         document.addEventListener('visibilitychange', sync);
-        nd.addEventListener('pointerenter', () => { hovered = true; sync(); });
-        nd.addEventListener('pointerleave', () => { hovered = false; sync(); });
+        if (finePointer) {
+            nd.addEventListener('pointerenter', () => { hovered = true; sync(); });
+            nd.addEventListener('pointerleave', () => { hovered = false; sync(); });
+        }
     }
 
     // ---------- Hero headline ----------

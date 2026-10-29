@@ -117,33 +117,51 @@ html:not(.dark) .nd { box-shadow: 0 0 0 7px #1b1f26, 0 0 0 8px rgba(0, 0, 0, 0.1
     to { opacity: 1; transform: none; }
 }
 
-.nd-map { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-.nd-world { transition: opacity 0.5s ease; }
-.nd-world.fade { opacity: 0; }
+/* The map is drawn once and only moved as a GPU layer (translate3d), so a frame
+ * never repaints it. 1 map unit = var(--u); the phone is 330 units wide. */
+.nd { --u: calc(100cqw / 330); }
+.nd-pan { position: absolute; left: 0; top: 0; width: calc(1080 * var(--u)); height: calc(2060 * var(--u)); will-change: transform; }
+.nd-pan > svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .nd-street { stroke: #232c38; fill: none; stroke-linecap: round; }
 .nd-block { fill: #18202a; }
 .nd-park { fill: #15291f; }
 .nd-water { fill: #10233b; }
 .nd-road { stroke: #2f3a48; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .nd-route { stroke: var(--mode); fill: none; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.8s ease; }
-.nd-route-glow { stroke: var(--mode); fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.22; filter: blur(4px); transition: stroke 0.8s ease; }
+.nd-route-glow { stroke: var(--mode); fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.16; transition: stroke 0.8s ease; }
 
-.nd-pin { transition: opacity 0.45s ease; }
-.nd-pin.hide { opacity: 0; }
-.nd-pin .pop { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 0.6s var(--ease-spring); }
-.nd-pin.hide .pop { transform: scale(0.2); }
-.nd-pin-label { fill: rgba(10, 13, 18, 0.9); }
-.nd-pin text { font: 600 11px -apple-system, BlinkMacSystemFont, sans-serif; fill: #f3f4f6; }
-.nd-pin text.dist { font-weight: 500; fill: #a5b4fc; }
+/* Landmarks, last GPS fix and the spoofed fix are small HTML layers on top of the map */
+.nd-mark { position: absolute; width: 0; height: 0; transition: opacity 0.45s ease; }
+.nd-mark.hide { opacity: 0; }
+.nd-pin-dot {
+    position: absolute; left: calc(-12 * var(--u)); top: calc(-31 * var(--u)); width: calc(24 * var(--u)); height: calc(24 * var(--u));
+    border-radius: 50%; border: calc(2 * var(--u)) solid #fff; display: grid; place-items: center;
+    color: #fff; font-size: calc(10.5 * var(--u)); transform-origin: 50% 140%;
+    transition: transform 0.6s var(--ease-spring);
+}
+.nd-pin-dot::after {
+    content: ''; position: absolute; left: 50%; bottom: calc(-8.5 * var(--u)); translate: -50% 0;
+    border: calc(5 * var(--u)) solid transparent; border-top: calc(6 * var(--u)) solid var(--c);
+}
+.nd-mark.hide .nd-pin-dot { transform: scale(0.2); }
+.nd-pin-label {
+    position: absolute; top: calc(-34 * var(--u)); padding: calc(3 * var(--u)) calc(6 * var(--u)); border-radius: calc(6 * var(--u));
+    background: rgba(10, 13, 18, 0.9); white-space: nowrap;
+    font: 600 calc(11 * var(--u))/1.2 -apple-system, BlinkMacSystemFont, sans-serif; color: #f3f4f6;
+}
+.nd-pin-label.r { left: calc(17 * var(--u)); }
+.nd-pin-label.l { right: calc(17 * var(--u)); }
+.nd-pin-label b { display: block; font-weight: 500; color: #a5b4fc; }
 
-.nd-lastgps { transition: opacity 0.5s ease; }
-.nd-lastgps.hide { opacity: 0; }
-.nd-lastgps text { font: 600 10px -apple-system, BlinkMacSystemFont, sans-serif; fill: #9ca3af; }
+.nd-gps-dot { position: absolute; left: calc(-6 * var(--u)); top: calc(-6 * var(--u)); width: calc(12 * var(--u)); height: calc(12 * var(--u));
+    border-radius: 50%; background: #6b7280; border: calc(2 * var(--u)) solid #d1d5db; }
+.nd-gps-label { position: absolute; left: calc(10 * var(--u)); top: calc(-6 * var(--u)); font: 600 calc(10 * var(--u))/1.2 -apple-system, BlinkMacSystemFont, sans-serif; color: #9ca3af; }
 
-.nd-ghost { transition: opacity 0.4s ease; }
-.nd-ghost.hide { opacity: 0; }
-.nd-ghost .ring { fill: none; stroke: var(--danger); stroke-width: 2; transform-box: fill-box; transform-origin: center; }
-.motion .nd-ghost:not(.hide) .ring { animation: ghostPing 1.2s ease-out infinite; }
+.nd-ghost-dot { position: absolute; left: calc(-7 * var(--u)); top: calc(-7 * var(--u)); width: calc(14 * var(--u)); height: calc(14 * var(--u));
+    border-radius: 50%; background: var(--danger); border: calc(2 * var(--u)) solid #fff; }
+.nd-ghost-ring { position: absolute; left: calc(-9 * var(--u)); top: calc(-9 * var(--u)); width: calc(18 * var(--u)); height: calc(18 * var(--u));
+    border-radius: 50%; border: calc(2 * var(--u)) solid var(--danger); }
+.motion .nd-mark:not(.hide) .nd-ghost-ring { animation: ghostPing 1.2s ease-out infinite; }
 @keyframes ghostPing { from { transform: scale(0.6); opacity: 1; } to { transform: scale(2.4); opacity: 0; } }
 
 /* The puck stays in the middle of the screen; the map moves under it */
@@ -152,6 +170,7 @@ html:not(.dark) .nd { box-shadow: 0 0 0 7px #1b1f26, 0 0 0 8px rgba(0, 0, 0, 0.1
     position: absolute; left: -10cqw; top: -10cqw; width: 20cqw; height: 20cqw; border-radius: 50%;
     background: radial-gradient(circle, color-mix(in srgb, var(--mode) 32%, transparent), transparent 70%);
     transition: background 0.8s ease, transform 0.8s ease;
+    will-change: transform, opacity;
 }
 .nd.dr .nd-halo { transform: scale(1.35); }
 .motion .nd.dr .nd-halo { animation: haloPulse 2.2s ease-in-out infinite; }
@@ -171,8 +190,7 @@ html:not(.dark) .nd { box-shadow: 0 0 0 7px #1b1f26, 0 0 0 8px rgba(0, 0, 0, 0.1
 .nd-status { position: absolute; top: 2.4cqw; left: 8cqw; right: 7cqw; z-index: 3; display: flex; justify-content: space-between;
     font-size: 3.6cqw; font-weight: 600; }
 .nd-status i { font-size: 3.2cqw; margin-left: 1.2cqw; }
-.nd-card { background: rgba(12, 15, 20, 0.92); border-radius: 4.8cqw; border: 1px solid rgba(255, 255, 255, 0.08);
-    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.nd-card { background: rgba(12, 15, 20, 0.96); border-radius: 4.8cqw; border: 1px solid rgba(255, 255, 255, 0.08); }
 .nd-man { display: flex; align-items: center; gap: 3.2cqw; padding: 3cqw 3.6cqw; }
 .nd-man-icon { flex: none; width: 11.5cqw; height: 11.5cqw; border-radius: 3cqw; display: grid; place-items: center;
     background: #1d232d; font-size: 6cqw; }

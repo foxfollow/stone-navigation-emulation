@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script>(function () { var d = document.documentElement; d.classList.add('js'); try { if ((localStorage.getItem('theme') || 'dark') !== 'dark') d.classList.remove('dark'); } catch (e) { } })();</script>
+    <meta name="description" content="How to put Stone Nav on your own iPhone without any programming experience: Xcode, a free Apple ID, Developer Mode, the 7-day signature and troubleshooting." />
+    <title>Install Stone Nav</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="resources/favicon-48.png" />
+    <link rel="apple-touch-icon" href="resources/apple-touch-icon.png" />
+    <link rel="canonical" href="https://foxfollow.github.io/stone-navigation-emulation/installation-en.html" />
+    <link rel="alternate" hreflang="en" href="https://foxfollow.github.io/stone-navigation-emulation/installation-en.html" />
+    <link rel="alternate" hreflang="uk" href="https://foxfollow.github.io/stone-navigation-emulation/installation.html" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { dark: { 900: '#0b0e13', 800: '#141922', 700: '#1f2630', 600: '#3a4250' }, primary: '#4d8cff' }
+                }
+            }
+        }
+    </script>
+    <link href="resources/site.css" rel="stylesheet" />
+    <script src="resources/site.js" defer></script>
+</head>
+
+<body class="bg-dark-900 text-white antialiased">
+    <header class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index-en.html" class="flex items-center gap-2 no-underline">
+                <img alt="Stone Nav logo" class="w-8 h-8 rounded-lg object-contain" src="resources/icon-512.png" />
+                <span class="text-lg font-semibold tracking-tight nav-brand">Stone Nav</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="index-en.html">Home</a>
+                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="#steps">Steps</a>
+                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="#signing">7 days</a>
+                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="#troubleshooting">Troubleshooting</a>
+                <a class="nav-link text-gray-400 hover:text-white transition-colors" href="https://github.com/foxfollow/stone-navigation-emulation">GitHub</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <div class="relative group" id="language-picker">
+                    <button class="nav-btn flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-medium">
+                        <span>EN</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="lang-dropdown absolute right-0 mt-2 w-40 rounded-xl border border-white/10 bg-dark-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all py-2 z-50">
+                        <a class="block px-4 py-2 hover:bg-white/5 text-sm font-medium" href="installation-en.html">English</a>
+                        <a class="block px-4 py-2 hover:bg-white/5 text-sm" href="installation.html">Українська</a>
+                    </div>
+                </div>
+                <button aria-label="Toggle theme" class="nav-btn p-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all" onclick="toggleTheme()">
+                    <i class="fa-solid fa-sun text-sm text-yellow-400" id="theme-icon-fa"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 max-w-3xl mx-auto px-4">
+        <section class="relative text-center mb-16">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="anim-fade hero-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-medium mb-8 font-mono tracking-wide">
+                Installation Guide
+            </div>
+            <h1 class="anim-fade anim-d1 hero-title font-mono text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
+                Stone Nav on your iPhone
+            </h1>
+            <p class="anim-fade anim-d2 hero-sub text-gray-400 leading-relaxed">
+                The app isn't on the App Store. You build it on a Mac and put it on your phone over a cable. No programming experience needed: you only copy the commands below.
+            </p>
+        </section>
+
+        <!-- Requirements -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8" id="requirements">
+            <h2 class="text-2xl font-bold mb-4">What you need</h2>
+            <ul class="space-y-3 text-sm text-gray-400 leading-relaxed">
+                <li><i class="fa-solid fa-laptop text-blue-400 w-5 mr-2"></i>A <strong>Mac</strong> with a macOS version that runs Xcode 27.</li>
+                <li><i class="fa-solid fa-mobile-screen text-blue-400 w-5 mr-2"></i>An <strong>iPhone on iOS 27</strong> or later, and a cable for the Mac.</li>
+                <li><i class="fa-brands fa-apple text-blue-400 w-5 mr-2"></i>An <strong>Apple ID</strong>, the same one you use for the App Store. A paid developer account isn't required.</li>
+                <li><i class="fa-solid fa-clock text-blue-400 w-5 mr-2"></i>About 15 GB free for Xcode and roughly an hour the first time.</li>
+            </ul>
+            <p class="text-gray-500 text-xs leading-relaxed mt-4">The app's interface and voice prompts are in Ukrainian.</p>
+        </section>
+
+        <div id="steps"></div>
+
+        <!-- 1. Xcode -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8">
+            <div class="flex gap-4">
+                <div class="step-num">1</div>
+                <div class="min-w-0">
+                    <h2 class="text-xl font-bold mb-3">Install Xcode</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">Open the App Store on your Mac, find <strong>Xcode</strong> and install it. Launch it once: it asks to install extra components, agree. If it asks about platforms, choose <strong>iOS</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Apple ID -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8">
+            <div class="flex gap-4">
+                <div class="step-num">2</div>
+                <div class="min-w-0">
+                    <h2 class="text-xl font-bold mb-3">Add your Apple ID to Xcode</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">Xcode → <strong>Settings</strong> (⌘,) → <strong>Accounts</strong> tab → “+” at the bottom left → <strong>Apple ID</strong> → sign in.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Download -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8">
+            <div class="flex gap-4">
+                <div class="step-num">3</div>
+                <div class="min-w-0">
+                    <h2 class="text-xl font-bold mb-3">Download the code</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">On the repository page, click the green <strong>Code</strong> button → <strong>Download ZIP</strong>. Double-click the archive to unpack it, for example into Downloads.</p>
+                    <a href="https://github.com/foxfollow/stone-navigation-emulation/archive/refs/heads/main.zip" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-600 px-5 py-2.5 rounded-xl text-sm font-semibold text-white no-underline transition-colors">
+                        <i class="fa-solid fa-download"></i> Download ZIP
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Project -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8" id="project">
+            <div class="flex gap-4">
+                <div class="step-num">4</div>
+                <div class="min-w-0 flex-1">
+                    <h2 class="text-xl font-bold mb-3">Create the Xcode project</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">A small tool called XcodeGen generates the project file. Open <strong>Terminal</strong> (⌘Space → “Terminal”) and run the commands one at a time: copy, paste, press Return.</p>
+
+                    <p class="text-gray-400 text-sm leading-relaxed mb-2"><strong>a.</strong> Install Homebrew, the package manager for Mac (skip if you have it). It asks for your Mac password; the characters don't show while you type, that's expected. If it ends with a <strong>Next steps</strong> section, run those commands too.</p>
+                    <div class="code-box flex items-start justify-between gap-4 p-4 rounded-xl border border-white/10 font-mono text-[12.5px] overflow-x-auto mb-5">
+                        <code class="text-blue-300 leading-relaxed" id="cmd-brew">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>
+                        <button class="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 flex-shrink-0" aria-label="Copy" data-copy="#cmd-brew"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                    <p class="text-gray-400 text-sm leading-relaxed mb-2"><strong>b.</strong> Install XcodeGen:</p>
+                    <div class="code-box flex items-start justify-between gap-4 p-4 rounded-xl border border-white/10 font-mono text-[12.5px] overflow-x-auto mb-5">
+                        <code class="text-blue-300 leading-relaxed" id="cmd-xcodegen">brew install xcodegen</code>
+                        <button class="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 flex-shrink-0" aria-label="Copy" data-copy="#cmd-xcodegen"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                    <p class="text-gray-400 text-sm leading-relaxed mb-5"><strong>c.</strong> Type <code class="path">cd </code> (with a space at the end), drag the <strong>StoneNavigationEmulation</strong> folder from the unpacked archive into the Terminal window, and press Return.</p>
+
+                    <p class="text-gray-400 text-sm leading-relaxed mb-2"><strong>d.</strong> Generate and open the project:</p>
+                    <div class="code-box flex items-start justify-between gap-4 p-4 rounded-xl border border-white/10 font-mono text-[12.5px] overflow-x-auto">
+                        <code class="text-blue-300 leading-relaxed" id="cmd-generate">xcodegen generate && open StoneNavigationEmulation.xcodeproj</code>
+                        <button class="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 flex-shrink-0" aria-label="Copy" data-copy="#cmd-generate"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Signing -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8" id="team">
+            <div class="flex gap-4">
+                <div class="step-num">5</div>
+                <div class="min-w-0">
+                    <h2 class="text-xl font-bold mb-3">Sign it with your Apple ID</h2>
+                    <ol class="space-y-2 text-sm text-gray-400 leading-relaxed list-decimal pl-5">
+                        <li>At the top left, click the blue <strong>StoneNavigationEmulation</strong> icon.</li>
+                        <li>Under <strong>TARGETS</strong>, pick <strong>StoneNavigationEmulation</strong>, then the <strong>Signing &amp; Capabilities</strong> tab.</li>
+                        <li><strong>Team</strong>: choose your name marked “(Personal Team)”.</li>
+                        <li><strong>Bundle Identifier</strong>: replace <code class="path">com.example</code> with something of your own, for example <code class="path">com.janedoe.StoneNavigationEmulation</code>. It must be unique worldwide.</li>
+                    </ol>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-3">The red errors under Team should go away.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. iPhone -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8" id="iphone">
+            <div class="flex gap-4">
+                <div class="step-num">6</div>
+                <div class="min-w-0">
+                    <h2 class="text-xl font-bold mb-3">Prepare the iPhone</h2>
+                    <ol class="space-y-2 text-sm text-gray-400 leading-relaxed list-decimal pl-5">
+                        <li>Connect the iPhone with a cable, unlock it and tap <strong>Trust</strong> when asked about the computer.</li>
+                        <li>Turn on <strong>Developer Mode</strong>: Settings → Privacy &amp; Security → Developer Mode. The phone restarts; confirm afterwards.</li>
+                    </ol>
+                    <p class="text-gray-400 text-xs leading-relaxed mt-3">If there's no Developer Mode item, it appears once the iPhone has seen Xcode (step 7). Come back here then.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Run -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8" id="run">
+            <div class="flex gap-4">
+                <div class="step-num">7</div>
+                <div class="min-w-0">
+                    <h2 class="text-xl font-bold mb-3">Run it</h2>
+                    <ol class="space-y-2 text-sm text-gray-400 leading-relaxed list-decimal pl-5">
+                        <li>In the device list at the top middle of Xcode, pick your iPhone.</li>
+                        <li>Press <strong>▶</strong> (⌘R). The first build takes a few minutes.</li>
+                        <li>If the iPhone says <strong>Untrusted Developer</strong>: Settings → General → VPN &amp; Device Management → your Apple ID → <strong>Trust</strong>. Then press ▶ again or just open the app.</li>
+                    </ol>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-3"><strong>Stone Nav</strong> appears on your home screen. You don't need the Mac for driving.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. First launch -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8" id="first-launch">
+            <div class="flex gap-4">
+                <div class="step-num">8</div>
+                <div class="min-w-0">
+                    <h2 class="text-xl font-bold mb-3">First launch on the phone</h2>
+                    <ul class="space-y-2 text-sm text-gray-400 leading-relaxed">
+                        <li><i class="fa-solid fa-location-arrow text-blue-400 mr-2"></i><strong>Location:</strong> allow it, then choose <strong>Always</strong>. Otherwise navigation stops when the screen is off.</li>
+                        <li><i class="fa-solid fa-person-running text-blue-400 mr-2"></i><strong>Motion &amp; Fitness:</strong> allow it, so the app can tell stops and turns without GPS.</li>
+                        <li><i class="fa-solid fa-volume-high text-blue-400 mr-2"></i><strong>Ukrainian voice:</strong> if the app's Settings say it's missing: iPhone Settings → Accessibility → Spoken Content → Voices → Ukrainian → download.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7 days -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8" id="signing">
+            <h2 class="text-2xl font-bold mb-3"><i class="fa-solid fa-hourglass-half text-amber-400 mr-2"></i>The signature lasts 7 days</h2>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">With a free Apple ID such an app runs for 7 days and then stops opening. To extend it, connect the iPhone to the Mac, open <code class="path">StoneNavigationEmulation.xcodeproj</code> in the same folder and press ▶ again. Settings, saved places and the last route are kept.</p>
+            <p class="text-gray-400 text-sm leading-relaxed">With the paid Apple Developer Program (99 USD a year) it lasts a year, and you can share the app through TestFlight.</p>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-8" id="troubleshooting">
+            <h2 class="text-2xl font-bold mb-4">Troubleshooting</h2>
+            <ul class="space-y-4 text-sm text-gray-400 leading-relaxed">
+                <li><strong>“Couldn't load project "NavigationCore"” or “Missing package product”.</strong> Quit Xcode completely (⌘Q) and open the project again.</li>
+                <li><strong>“Failed to register bundle identifier” or “No profiles for …”.</strong> That Bundle Identifier is taken. Change it, <a class="underline" href="#team">step 5</a>.</li>
+                <li><strong>“Developer Mode disabled”.</strong> Turn on Developer Mode, <a class="underline" href="#iphone">step 6</a>.</li>
+                <li><strong>Xcode doesn't see the phone.</strong> Unlock the iPhone, reconnect the cable and tap Trust again.</li>
+                <li><strong>You downloaded a newer version.</strong> Repeat steps 4c–4d and 5 for the new folder.</li>
+            </ul>
+        </section>
+
+        <!-- Developers -->
+        <section class="reveal card-gradient p-8 rounded-2xl mb-24" id="developers">
+            <h2 class="text-2xl font-bold mb-3">For developers</h2>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">To avoid picking the team in Xcode after every <code class="path">xcodegen generate</code>, put your Team ID and bundle ID prefix in <code class="path">Config/Local.xcconfig</code>. It isn't tracked by git.</p>
+            <div class="code-box flex items-start justify-between gap-4 p-4 rounded-xl border border-white/10 font-mono text-[12.5px] overflow-x-auto mb-4">
+                <code class="text-blue-300 leading-relaxed" id="cmd-local">cp Config/Local.xcconfig.example Config/Local.xcconfig</code>
+                <button class="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 flex-shrink-0" aria-label="Copy" data-copy="#cmd-local"><i class="fa-regular fa-copy"></i></button>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">Navigation logic lives in the <code class="path">NavigationCore</code> Swift package and is tested without a simulator: <code class="path">swift test</code>. More in <a class="underline" href="https://github.com/foxfollow/stone-navigation-emulation/blob/main/docs/ARCHITECTURE.md">ARCHITECTURE.md</a>.</p>
+        </section>
+    </main>
+
+    <footer class="footer-section border-t border-white/10 pt-8 pb-8">
+        <div class="footer-bottom max-w-7xl mx-auto px-4 text-center text-[11px] text-gray-500">
+            <p><a class="underline" href="index-en.html">Stone Nav</a> · <a class="underline" href="https://github.com/foxfollow/stone-navigation-emulation">GitHub</a> · <a class="underline" href="https://github.com/foxfollow/stone-navigation-emulation/blob/main/LICENSE">MIT</a></p>
+            <p class="mt-2">&copy; 2026 foxfollow</p>
+        </div>
+    </footer>
+</body>
+
+</html>
